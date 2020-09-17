@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    ul{
+        list-style: none;
+        li{
+            margin: 2vw; 
+           a{
+                text-decoration: none;
+             }   
+        }
+    }
+    div{
+        margin: 2vw; 
+    }
+}
