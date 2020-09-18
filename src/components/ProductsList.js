@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const ProductsList = ({ products }) => {
   return (
-    <div>
+    <div className="productslist">
       { products.map(product => <Link to={`product/${product.id}`}><ProductCard product={product} /></Link>) }
     </div>
   );

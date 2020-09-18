@@ -22,4 +22,32 @@ nav ul li a {
 nav div {
   margin: 2vw;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.productCard {
+  width: 15vw;
+  margin: 2vw;
+}
+
+.productCard div {
+  width: 100%;
+  font-size: 0.5rem;
+}
+
+.productCard img {
+  width: 100%;
+}
+
+.productslist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
 /*# sourceMappingURL=App.css.map */

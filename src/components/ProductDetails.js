@@ -13,11 +13,11 @@ const ProductDetails = ({ products }) => {
                     <div>{matchProduct.product_title}</div>
                     <div><img src={matchProduct.product_image} /></div>
                     <div>{matchProduct.product_description}</div>
-                    <div>{matchProduct.product_price} Bottlecaps</div>
+                    <div>{matchProduct.product_price} Yards of Linen</div>
                     <StarRatings
                         rating={matchProduct.product_rating}
                         starRatingColor='yellow'
-                        starDimension='15px'
+                        starDimension='1vw'
                     />
                 </>
         </div>

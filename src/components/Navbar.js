@@ -9,7 +9,7 @@ const Navbar = () => {
                 <li><Link to="cart">Cart</Link></li>
             </ul>
             <div>
-                <p>Total Price: 0 Bottlecaps</p>
+                <p>Total Price: 0 Yards of Linen</p>
             </div>
         </nav>
     )
