@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home'; 
 import Navbar from './components/Navbar'; 
+import Footer from './components/Footer'; 
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails'; 
 
@@ -18,13 +19,14 @@ function App() {
 
 
   return (
-    <div>
+    <div className="wrapper">
       <Navbar totalPrice={totalPrice}/> 
       <Routes>
         <Route path="/" element={<Home  products={products}/>} />
         <Route path="cart" element={<Cart />} />
         <Route path="product/:id"  element={ products && <ProductDetails products={products}/> }/>   
       </Routes>
+      <Footer/>
     </div>
   );
 }

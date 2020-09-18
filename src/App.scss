@@ -1,14 +1,10 @@
 $font : 'Sofia', sans-serif;
 $font-size:16px;
 $blue : #0a4870;
-$blue2 : #e3ebf1;
 $black: #000;
 $grey : #595858;
 $grey2 : #f0f0f0;
-$grey3 : #e8e7e7;
-$grey4 : #fdfdfd;
-$bluegrey : #49606e;
-$orange: #ec992c;
+
 
 @mixin radius($val) {
     -webkit-border-radius: $val;
@@ -18,7 +14,7 @@ $orange: #ec992c;
 
 @mixin cardsOpen() {
     &::before {
-      background: rgba(10,72,112, 0.6);
+      background: #422e0c9b; 
     }
     .buy-container {
       .content {
@@ -36,10 +32,49 @@ $orange: #ec992c;
     }
 }
 
-body{
-    background-image: url('./components/images/kitten2.png');
+.wrapper:before{
+    animation: slide 30s linear infinite;
+    content: ''; 
+    background: url('./components/images/kitten2.png') repeat bottom;
+    opacity: 0.3; 
     background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;   
 }
+
+.wrapper{
+    background: url('./components/images/background.png') repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;   
+}
+
+@keyframes slide {
+    0% { 
+        opacity: 0; 
+    }
+    30%, 70%{
+        opacity: 0.3; 
+    }
+    50%{
+        opacity: 0.1; 
+    }
+    45%{
+        opacity: 0.2; 
+    }
+    100% {
+        opacity: 0; 
+    }
+  }
+  
 
 nav {
     display: flex;
@@ -77,7 +112,7 @@ ul{
     display: flex;
     flex: 0 0 300px;
     flex-direction: column;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    box-shadow: 0 20px 50px #422e0c9b;
     
     margin: 20px;
     margin-bottom: 30px;
@@ -96,7 +131,7 @@ ul{
     transition: .3s;
 
     &:nth-of-type(2){
-        background-position: 50% 15%;   
+        background-position: 50% 20%;   
         }
     &:nth-of-type(5){
     background-position: 50% 5%;   
@@ -207,29 +242,6 @@ ul{
         transition: .3s;
         .info-and-date-container {
           display: flex;
-
-          .box {
-            flex: 1 0;
-
-            padding: 15px;
-            margin-top: 20px;
-            @include radius(10px);
-
-            background: white;
-
-            font-weight: bold;
-            font-size: 0.9em;
-
-            .icon {
-              margin-bottom: 5px;
-            }
-
-            &.info{
-              color: $orange;
-
-              margin-right: 10px;
-            }
-          }
         }
         .disclaimer {
           margin-top: 15px;
@@ -251,3 +263,60 @@ ul{
     }
   }
 }
+
+.productdetails{
+    .image-wrapper{
+        position: relative;
+        height: 70vh; 
+        width: 70vh; 
+        margin: auto; 
+    span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%; 
+        width: 100%; 
+        border: 1px solid black;     
+            &:nth-child(1) {
+                border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+                transition: 0.5s;
+                animation: animate 8s linear infinite;
+            }
+            &:nth-child(2) {
+                border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+                transition: 0.5s;
+                animation: animate 6s linear infinite;
+            }
+            &:nth-child(3) {
+                border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+                transition: 0.5s;
+                animation: animate2 12s linear infinite;
+            }
+    }
+    img{
+        width: 100%; 
+        height: 100%; 
+        border-radius: 50%; 
+    }
+}   
+}
+
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+  }
