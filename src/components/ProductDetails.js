@@ -16,8 +16,8 @@ const ProductDetails = ({ products }) => {
                     <div>{matchProduct.product_price} Yards of Linen</div>
                     <StarRatings
                         rating={matchProduct.product_rating}
-                        starRatingColor='yellow'
-                        starDimension='1vw'
+                        starRatedColor="yellow"
+                        starDimension="20px"
                     />
                 </>
         </div>

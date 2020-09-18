@@ -1,23 +1,35 @@
 import React from 'react';
-import StarRatings from 'react-star-ratings'; 
+import StarRatings from 'react-star-ratings';
+import { Link } from 'react-router-dom';
 
 
 const ProductCard = ({ product }) => {
-    
+
     return (
-        <div className="productCard">
-            <h3>{product.product_title}</h3>
-            <div><img src={product.product_image} /></div>
-            <div>{product.product_description}</div>
-            <div>Price: {product.product_price} Yards of Linen</div>
-            <StarRatings
-                rating={product.product_rating}
-                starRatingColor='yellow'
-                starDimension='5px' 
-            />
-        </div>
-
-
+        <li className="item-card" style={{ backgroundImage: `url("${product.product_image}")` }}>
+                <div className="buy-container">
+                    <div className="content">
+                        <button className="btn">Buy</button>
+                    </div>
+                </div>
+                <div className="informations-container">
+                <Link to={`product/${product.id}`}>
+                    <h2 className="title">{product.product_title}</h2>
+                    <p className="price"> Price {product.product_price} Yards of Linen</p>
+                    <p className="sub-title">
+                        <StarRatings
+                            rating={product.product_rating}
+                            starRatedColor="yellow"
+                            starDimension="20px"
+                        /></p>
+                    <div className="more-information">
+                        <div className="info-and-date-container">
+                            <p className="disclaimer">{product.product_description}</p>
+                        </div>
+                    </div>
+                    </Link>
+                </div>
+        </li>
     )
 }
 
