@@ -6,18 +6,21 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer'; 
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails'; 
+import productsdata from './data'; 
 
 function App() {
   const [ products, setProducts ] = useState(null);
   const [ totalPrice, setTotalPrice ] = useState(0)
 
+  // fetch('https://floating-temple-56492.herokuapp.com/products')
+  //     .then(res => res.json())
+  //     .then(data => setProducts(data))
+
   useEffect(() => {
-    fetch('https://floating-temple-56492.herokuapp.com/products')
-      .then(res => res.json())
-      .then(data => setProducts(data))
+   setProducts(productsdata); 
   }, [])
 
-
+console.log(products);
   return (
     <div className="wrapper">
       <Navbar totalPrice={totalPrice}/> 

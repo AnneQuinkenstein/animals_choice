@@ -9,20 +9,26 @@ const ProductDetails = ({ products }) => {
 
     return (
         <div className="productdetails">
-            <div>{matchProduct.product_title}</div>
-            <div className="image-wrapper">
-                <span></span>
-                <span></span>
-                <span></span>
-                <img src={matchProduct.product_image} />
+            <div className="info-wrapper">
+                <h1>{matchProduct.product_title}</h1>
+                <p>{matchProduct.product_description}</p>
+                <div>
+                   <StarRatings
+                    rating={matchProduct.product_rating}
+                    starRatedColor="orange"
+                    starDimension="20px"
+                />  
+                </div>
+                <p><mark>Price </mark><span>{matchProduct.product_price}</span>   Yards of Linen</p>
             </div>
-            <div>{matchProduct.product_description}</div>
-            <div>{matchProduct.product_price} Yards of Linen</div>
-            <StarRatings
-                rating={matchProduct.product_rating}
-                starRatedColor="yellow"
-                starDimension="20px"
-            />
+            <div className="item-wrapper">
+                <span></span>
+                <span></span>
+                <span></span>
+                <div className="image-wrapper">
+                    <img src={matchProduct.product_image} />
+                </div>
+            </div>
         </div>
     )
 }
