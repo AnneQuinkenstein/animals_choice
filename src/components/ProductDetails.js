@@ -19,7 +19,7 @@ const ProductDetails = ({ products }) => {
                     starDimension="20px"
                 />  
                 </div>
-                <p><mark>Price </mark><span>{matchProduct.product_price}</span>   Yards of Linen</p>
+                <p><mark>Price </mark><span>&nbsp;&nbsp;{matchProduct.product_price}&nbsp;&nbsp;</span>   Yards of Linen</p>
             </div>
             <div className="item-wrapper">
                 <span></span>
