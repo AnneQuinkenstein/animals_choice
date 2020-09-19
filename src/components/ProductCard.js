@@ -9,17 +9,17 @@ const ProductCard = ({ product }) => {
         <li className="item-card" style={{ backgroundImage: `url("${product.product_image}")` }}>
                 <div className="buy-container">
                     <div className="content">
-                        <button className="btn">Buy</button>
+                        <button className="btn">Put in Cart</button>
                     </div>
                 </div>
                 <div className="informations-container">
                 <Link to={`product/${product.id}`}>
                     <h2 className="title">{product.product_title}</h2>
-                    <p className="price"> Price {product.product_price} Yards of Linen</p>
+                    <p className="price"> <mark>Price </mark> <span>{product.product_price}</span> Yards of Linen</p>
                     <p className="sub-title">
                         <StarRatings
                             rating={product.product_rating}
-                            starRatedColor="yellow"
+                            starRatedColor="orange"
                             starDimension="20px"
                         /></p>
                     <div className="more-information">
@@ -32,6 +32,5 @@ const ProductCard = ({ product }) => {
         </li>
     )
 }
-
 
 export default ProductCard; 
