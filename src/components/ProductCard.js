@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
                 <div className="informations-container">
                 <Link to={`product/${product.id}`}>
                     <h2 className="title">{product.product_title}</h2>
-                    <p className="price"> <mark>Price </mark> <span>{product.product_price}</span> Yards of Linen</p>
+                    <p className="price"> <mark>Price </mark> <span>&nbsp;&nbsp;{product.product_price}&nbsp;&nbsp;</span> Yards of Linen</p>
                     <p className="sub-title">
                         <StarRatings
                             rating={product.product_rating}

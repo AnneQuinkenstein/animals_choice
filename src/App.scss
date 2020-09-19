@@ -36,6 +36,8 @@ body{
 
 a{
   text-decoration: none;
+  color: $blue; 
+  cursor: pointer;
 }
 
 .wrapper:before{
@@ -77,6 +79,22 @@ a{
 nav{
   display: flex; 
   justify-content: center;
+  .logo-wrapper{
+    height: 10vh; 
+    width: 100vh; 
+    background: transparent;
+    position: absolute; 
+    left: 1vw; 
+    top: -2vh; 
+    a{
+      height: 100%; 
+      width: 10vh; 
+      img {
+      height: 100%;
+      width: 100%;
+      }
+    }
+  }
   ul{
     @include radius(25px);
     display: inline-flex;
