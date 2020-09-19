@@ -1,26 +1,7 @@
 body {
   color: #0a4870;
-}
-
-a {
-  text-decoration: none;
-  color: #0a4870;
-  cursor: pointer;
-}
-
-.wrapper:before {
-  -webkit-animation: slide 30s linear infinite;
-          animation: slide 30s linear infinite;
-  content: '';
-  background: url("./components/images/kitten3.png") repeat bottom;
-  opacity: 0.4;
+  background: url("./components/images/kitten3.png") no-repeat bottom;
   background-size: cover;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,6 +12,13 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #0a4870;
+  cursor: pointer;
 }
 
 @-webkit-keyframes slide {
@@ -76,20 +64,22 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 nav .logo-wrapper {
   height: 10vh;
-  width: 100vh;
   background: transparent;
-  position: absolute;
-  left: 1vw;
-  top: -2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 nav .logo-wrapper a {
   height: 100%;
   width: 10vh;
+  display: inherit;
 }
 
 nav .logo-wrapper a img {
@@ -156,7 +146,7 @@ nav ul:hover {
   border: 0px solid white;
 }
 
-nav div {
+nav .nav-cart {
   border-radius: 25px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -282,7 +272,7 @@ nav div {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  padding: 10px;
+  padding: 20px;
   background: white;
   -webkit-transform: translateY(120px);
           transform: translateY(120px);
@@ -536,14 +526,15 @@ span {
 }
 
 .footer {
-  position: absolute;
-  bottom: 2vh;
-  right: 5vw;
   font-size: 1.2rem;
   color: #0a4870;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0 5vw;
 }
 
 .footer a {

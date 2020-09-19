@@ -30,8 +30,15 @@ $brownshimmerlight: #422e0c36;
     }
 }
 
+
 body{
   color: $blue; 
+  background: url('./components/images/kitten3.png') no-repeat bottom;
+  background-size: cover;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  min-height: 100vh;
 }
 
 a{
@@ -40,21 +47,21 @@ a{
   cursor: pointer;
 }
 
-.wrapper:before{
-    animation: slide 30s linear infinite;
-    content: ''; 
-    background: url('./components/images/kitten3.png') repeat bottom;
-    opacity: 0.4; 
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between;  
+.wrapper{
+    // animation: slide 30s linear infinite;
+    // content: ''; 
+    // background: url('./components/images/kitten3.png') repeat bottom;
+    // opacity: 0.4; 
+    // background-size: cover;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
+    // z-index: -1; 
+    // display: flex; 
+    // flex-direction: column; 
+    // justify-content: space-between;  
 }
 
 
@@ -76,25 +83,27 @@ a{
     }
   }
   
+//Navbar
 nav{
   display: flex; 
   justify-content: center;
+  flex-wrap: wrap;
+  //Logo
   .logo-wrapper{
     height: 10vh; 
-    width: 100vh; 
-    background: transparent;
-    position: absolute; 
-    left: 1vw; 
-    top: -2vh; 
+    background: transparent; 
+    display: flex; 
     a{
       height: 100%; 
       width: 10vh; 
+      display: inherit; 
       img {
       height: 100%;
       width: 100%;
       }
     }
   }
+  //Menu
   ul{
     @include radius(25px);
     display: inline-flex;
@@ -140,7 +149,8 @@ nav{
       border: 0px solid white;
     }
   }
-  div{
+  //Cart - total amount 
+  .nav-cart{
     @include radius(25px);
     display: inline-flex;
     background-color: $brownshimmerlight;
@@ -225,7 +235,7 @@ nav{
     
     .informations-container{      
       flex: 1 0 auto;
-      padding: 10px;
+      padding: 20px;
       background: white;
       transform: translateY(120px);
       transition: .3s;
@@ -379,13 +389,12 @@ nav{
     font-weight: bold; 
   }
 
-.footer{
-  position: absolute; 
-  bottom: 2vh; 
-  right: 5vw; 
+.footer{ 
   font-size: 1.2rem;
   color: $blue; 
   display: flex; 
+  justify-content: flex-end;
+  margin: 0 5vw;
   a {
     color: $blue; 
     &:hover{
