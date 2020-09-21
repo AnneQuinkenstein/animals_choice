@@ -40,6 +40,10 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   width: 95%;
+  background-color: #422e0c36;
+  border-radius: 25px;
+  border-bottom: 5px solid #ff501e;
+  margin: 3vh;
 }
 
 nav div {
@@ -78,14 +82,12 @@ nav div .logo-wrapper a img {
 }
 
 nav ul {
-  border-radius: 25px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  background-color: #422e0c36;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -137,11 +139,9 @@ nav ul:hover {
 }
 
 nav .nav-cart {
-  border-radius: 25px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background-color: #422e0c36;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

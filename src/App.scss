@@ -59,6 +59,10 @@ nav{
   flex-wrap: wrap;
   align-items: center;
   width: 95%; 
+  background-color: $brownshimmerlight;
+  @include radius(25px);
+  border-bottom: 5px solid $orange; 
+  margin: 3vh; 
   div{
     display: flex;
     justify-content: space-between; 
@@ -82,10 +86,8 @@ nav{
   }
   //navbar
   ul{
-    @include radius(25px);
     display: inline-flex;
     height: min-content; 
-    background-color: $brownshimmerlight;
     align-items: center;
     padding: 12px 10px;
     margin-left: 3vw; 
@@ -128,9 +130,7 @@ nav{
   }
   //Cart - total amount 
   .nav-cart{
-    @include radius(25px);
     display: inline-flex;
-    background-color: $brownshimmerlight;
     align-items: center;
     height: min-content;
     padding: 12px 10px;

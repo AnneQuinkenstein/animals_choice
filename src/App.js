@@ -24,8 +24,8 @@ function App() {
   console.log(products);
   return (
     <div className="wrapper">
+      <div className="maincontent">
         <Navbar totalPrice={totalPrice} />
-        <div className="maincontent">
          <Routes>
           <Route path="/" element={<Home products={products} />} />
           <Route path="cart" element={<Cart />} />
