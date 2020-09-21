@@ -33,12 +33,8 @@ $brownshimmerlight: #422e0c36;
 
 body{
   color: $blue; 
-  background: url('./components/images/kitten3.png') no-repeat bottom;
-  background-size: cover;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: space-between; 
-  min-height: 100vh;
+  background: url('./components/images/kitten9.png'), url('./components/images/background.png'), url('./components/images/background.png'),  no-repeat bottom;
+  background-size: cover; 
 }
 
 a{
@@ -47,63 +43,43 @@ a{
   cursor: pointer;
 }
 
-// .wrapper{ 
-    // animation: slide 30s linear infinite;
-    // content: ''; 
-    // background: url('./components/images/kitten3.png') repeat bottom;
-    // opacity: 0.4; 
-    // background-size: cover;
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // bottom: 0;
-    // left: 0;
-    // z-index: -1; 
-    // display: flex; 
-    // flex-direction: column; 
-    // justify-content: space-between;  
-// }
-
-
-@keyframes slide {
-    0% { 
-        opacity: 0.3; 
-    }
-    30%, 70%{
-        opacity: 0.4; 
-    }
-    50%{
-        opacity: 0.5; 
-    }
-    45%{
-        opacity: 0.4; 
-    }
-    100% {
-        opacity: 0.3; 
-    }
-  }
+.wrapper{ 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center;
+    min-height: 100vh; 
+}
   
 //Navbar
 nav{
   display: flex; 
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
+  width: 95%; 
+  div{
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    align-items: center; 
   //Logo
   .logo-wrapper{
-    height: 10vh; 
     background: transparent; 
     display: flex; 
+    width: max-content; 
     a{
       height: 100%; 
       width: 10vh; 
       display: inherit; 
       img {
       height: 100%;
-      width: 100%;
+      width: 100%; 
       }
     }
   }
-  //Menu
+  }
+  //navbar
   ul{
     @include radius(25px);
     display: inline-flex;
@@ -111,7 +87,7 @@ nav{
     background-color: $brownshimmerlight;
     align-items: center;
     padding: 12px 10px;
-    margin: 3vh 0 0 auto;
+    margin-left: 3vw; 
     li {
       a{
         list-style: none;
@@ -155,8 +131,16 @@ nav{
     display: inline-flex;
     background-color: $brownshimmerlight;
     align-items: center;
-    padding: 0 10px;
-    margin: 3vh 5vw 0 auto;
+    height: min-content;
+    padding: 12px 10px;
+    p{
+      color: $blue;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 0 30px;
+      position: relative;
+      white-space: nowrap;
+    }
   }
 }
 
@@ -184,6 +168,7 @@ nav{
     text-align: center;
     color: $blue;
     transition: .3s;
+    opacity: 0.7; 
     &:nth-of-type(2){
         background-position: 50% 20%;   
         }
@@ -334,7 +319,8 @@ nav{
         height: 100%; 
         img{
           min-width: 100%; 
-          min-height: 100%; 
+          min-height: 100%;
+          opacity: 0.8; 
         }
     } 
   }  
@@ -346,10 +332,11 @@ nav{
     flex-direction: column;
     justify-content: space-around;
     height: min-content; 
-    background-color: $brownshimmerlight;
+    background-color: white;
     align-items: center;
     max-width: 45vw; 
     margin: 10vw; 
+    opacity: 0.8; 
     p:first-child{
       margin: 0 5vw; 
     }
@@ -358,7 +345,6 @@ nav{
     }
   } 
 }
-
 
 @keyframes animate {
     0% {
