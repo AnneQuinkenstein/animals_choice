@@ -201,14 +201,28 @@ nav .nav-cart p {
   -webkit-transition: .3s;
   transition: .3s;
   opacity: 0.7;
+  border-bottom: 14px solid #ff501e;
+}
+
+.productslist .item-card:nth-of-type(1) {
+  border-right: 4px solid #ff501e;
+}
+
+.productslist .item-card:nth-of-type(2) {
+  border-right: 4px solid #ff501e;
 }
 
 .productslist .item-card:nth-of-type(2) {
   background-position: 50% 20%;
 }
 
+.productslist .item-card:nth-of-type(3) {
+  border-right: 4px solid #ff501e;
+}
+
 .productslist .item-card:nth-of-type(5) {
   background-position: 50% 5%;
+  border-left: 4px solid #ff501e;
 }
 
 .productslist .item-card::before {
