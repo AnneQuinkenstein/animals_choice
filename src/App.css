@@ -40,6 +40,10 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   width: 95%;
+  background-color: #422e0c36;
+  border-radius: 25px;
+  border-bottom: 5px solid #ff501e;
+  margin: 3vh;
 }
 
 nav div {
@@ -78,19 +82,25 @@ nav div .logo-wrapper a img {
 }
 
 nav ul {
-  border-radius: 25px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  background-color: #422e0c36;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 12px 10px;
   margin-left: 3vw;
+  background-color: #422e0c36;
+  border-radius: 25px;
+}
+
+nav ul li {
+  background-color: #422e0c36;
+  border-radius: 25px;
+  padding: 10px;
 }
 
 nav ul li a {
@@ -137,11 +147,9 @@ nav ul:hover {
 }
 
 nav .nav-cart {
-  border-radius: 25px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background-color: #422e0c36;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -201,14 +209,28 @@ nav .nav-cart p {
   -webkit-transition: .3s;
   transition: .3s;
   opacity: 0.7;
+  border-bottom: 14px solid #ff501e;
+}
+
+.productslist .item-card:nth-of-type(1) {
+  border-right: 4px solid #ff501e;
+}
+
+.productslist .item-card:nth-of-type(2) {
+  border-right: 4px solid #ff501e;
 }
 
 .productslist .item-card:nth-of-type(2) {
   background-position: 50% 20%;
 }
 
+.productslist .item-card:nth-of-type(3) {
+  border-right: 4px solid #ff501e;
+}
+
 .productslist .item-card:nth-of-type(5) {
   background-position: 50% 5%;
+  border-left: 4px solid #ff501e;
 }
 
 .productslist .item-card::before {
@@ -535,17 +557,35 @@ span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin: 0 5vw;
+  background-color: #422e0c36;
+  border-left: 0.2px solid #ff501e;
+  border-radius: 25px;
+  padding: 12px 10px;
+  margin: 0 5vw 5vh 0;
 }
 
-.footer a {
+.footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #422e0c36;
+  border-radius: 25px;
+  padding: 12px 10px;
+  border-left: 0.5px solid #ff501e;
+}
+
+.footer div a {
   color: #0a4870;
+  background-color: #422e0c36;
+  border-left: 0.3px solid #ff501e;
+  border-radius: 25px;
+  padding: 5px 20px;
 }
 
-.footer a:hover {
+.footer div a:hover {
   cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */
