@@ -93,6 +93,14 @@ nav ul {
           align-items: center;
   padding: 12px 10px;
   margin-left: 3vw;
+  background-color: #422e0c36;
+  border-radius: 25px;
+}
+
+nav ul li {
+  background-color: #422e0c36;
+  border-radius: 25px;
+  padding: 10px;
 }
 
 nav ul li a {
@@ -549,17 +557,35 @@ span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin: 0 5vw;
+  background-color: #422e0c36;
+  border-left: 0.2px solid #ff501e;
+  border-radius: 25px;
+  padding: 12px 10px;
+  margin: 0 5vw 5vh 0;
 }
 
-.footer a {
+.footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #422e0c36;
+  border-radius: 25px;
+  padding: 12px 10px;
+  border-left: 0.5px solid #ff501e;
+}
+
+.footer div a {
   color: #0a4870;
+  background-color: #422e0c36;
+  border-left: 0.3px solid #ff501e;
+  border-radius: 25px;
+  padding: 5px 20px;
 }
 
-.footer a:hover {
+.footer div a:hover {
   cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */

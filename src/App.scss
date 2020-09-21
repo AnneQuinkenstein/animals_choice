@@ -91,7 +91,12 @@ nav{
     align-items: center;
     padding: 12px 10px;
     margin-left: 3vw; 
+    background-color: $brownshimmerlight;
+   @include radius(25px);
     li {
+      background-color: $brownshimmerlight;
+      @include radius(25px);
+      padding: 10px; 
       a{
         list-style: none;
         color: $blue;
@@ -391,12 +396,28 @@ nav{
   font-size: 1.2rem;
   color: $blue; 
   display: flex; 
-  justify-content: flex-end;
+  align-self: flex-end; 
   margin: 0 5vw;
+  background-color: $brownshimmerlight;
+  border-left: 0.2px solid $orange;  
+  @include radius(25px);
+  padding: 12px 10px;
+  margin: 0 5vw 5vh 0; 
+  div{
+    display: flex; 
+    background-color: $brownshimmerlight;
+    @include radius(25px);
+    padding: 12px 10px;
+    border-left: 0.5px solid $orange;  
   a {
     color: $blue; 
+    background-color: $brownshimmerlight;
+    border-left: 0.3px solid $orange; 
+    @include radius(25px);
+    padding: 5px 20px; 
     &:hover{
       cursor: pointer;
     }
   }
+}
 }
