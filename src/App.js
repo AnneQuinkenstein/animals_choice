@@ -10,7 +10,8 @@ import productsdata from './data';
 
 function App() {
   const [ products, setProducts ] = useState(null);
-  const [ totalPrice, setTotalPrice ] = useState(0)
+  // const [ totalPrice, setTotalPrice ] = useState(0)
+  const totalPrice = 0; 
 
   // fetch('https://floating-temple-56492.herokuapp.com/products')
   //     .then(res => res.json())

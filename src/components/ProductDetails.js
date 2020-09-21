@@ -26,7 +26,7 @@ const ProductDetails = ({ products }) => {
                 <span></span>
                 <span></span>
                 <div className="image-wrapper">
-                    <img src={matchProduct.product_image} />
+                    <img src={matchProduct.product_image} alt={matchProduct.product_title} />
                 </div>
             </div>
         </div>
