@@ -8,8 +8,9 @@ const ProductDetails = () => {
     const { id } = useParams();
     const { products } = useContext(AnimalsContext);
 
-    const matchProduct = products.find((product) => (product.id === +id))
+    const matchProduct = products && products.find((product) => (product.id === +id))
 
+    
     return (
         <div className="productdetails">
             <div className="info-wrapper">

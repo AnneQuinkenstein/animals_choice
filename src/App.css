@@ -588,4 +588,16 @@ span {
 .footer div a:hover {
   cursor: pointer;
 }
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.col {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+}
 /*# sourceMappingURL=App.css.map */
