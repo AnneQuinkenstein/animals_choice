@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AnimalsContext } from '../contexts/AnimalsContext';
 
 const Navbar = () => {
+    const { totalPrice } = useContext(AnimalsContext);
+
     return (
         <nav>
             <div>
@@ -15,7 +18,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="nav-cart">
-                <p><mark>Total Price </mark> <span>&nbsp;&nbsp;0&nbsp;&nbsp;</span> Yards of Linen</p>
+                <p><mark>Total Price </mark> <span>&nbsp;&nbsp;{totalPrice}&nbsp;&nbsp;</span> Yards of Linen</p>
             </div>
         </nav>
     )
