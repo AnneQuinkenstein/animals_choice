@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ProductCard from './ProductCard'; 
+import { AnimalsContext } from '../contexts/AnimalsContext';
 
-
-const ProductsList = ({ products }) => {
+const ProductsList = () => {
+  const { products } = useContext(AnimalsContext);
+  
   return (
     <ul className="productslist">
-      { products.map(product => <ProductCard product={product} />) }
+      { products && products.map(product => <ProductCard product={product} key={product.id}/>) }
     </ul>
   );
 }
