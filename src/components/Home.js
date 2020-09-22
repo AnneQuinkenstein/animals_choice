@@ -1,10 +1,12 @@
 import React from 'react';
 import ProductsList from './ProductsList';
 
-const Home = ({ products }) => {
+
+
+const Home = () => {
     return (
         <div>
-            {products && <ProductsList products={products} />}
+            <ProductsList/>
         </div>
     )
 }

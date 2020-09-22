@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import StarRatings from 'react-star-ratings';
 import { useParams } from 'react-router';
+import { AnimalsContext } from '../contexts/AnimalsContext';
 
-const ProductDetails = ({ products }) => {
+
+const ProductDetails = () => {
     const { id } = useParams();
+    const { products } = useContext(AnimalsContext);
 
     const matchProduct = products.find((product) => (product.id === +id))
 
