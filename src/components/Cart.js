@@ -13,6 +13,7 @@ const { cartArray, totalPrice } = useContext(AnimalsContext)
             <div className='col'>Quantity</div>
         </div>
         { cartArray.map(item=> <CartsItem item={item} />)}
+        <div>totalPrice: {totalPrice} </div>
         </>
 
     )
