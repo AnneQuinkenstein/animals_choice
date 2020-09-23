@@ -17,6 +17,7 @@ const AnimalsContextComponent = (props) => {
         setProducts(productsdata);
     }, [])
 
+    // add Product to Cart
     const addToCart = (product) => {
         const addNewProduct = () => {
                 product.quantity = 1;
@@ -26,8 +27,14 @@ const AnimalsContextComponent = (props) => {
         setTotalPrice(totalPrice + product.product_price);    
     }
 
+     //remove Product from Cart
+  const removeItem = (item) => {
+    setCartArray(products.filter(product => (product.id !== item.id)))
+    setTotalPrice(totalPrice - (item.quantity * item.product_price))
+  }
+
 return (
-    <AnimalsContext.Provider value={{ cartArray, totalPrice, products, addToCart }}>
+    <AnimalsContext.Provider value={{ cartArray, totalPrice, products, addToCart, removeItem }}>
         {props.children}
     </AnimalsContext.Provider>
 )
