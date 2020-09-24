@@ -17,27 +17,35 @@ const AnimalsContextComponent = (props) => {
         setProducts(productsdata);
     }, [])
 
-    // add Product to Cart
+    // add Product to Cart or increase Quantity
     const addToCart = (product) => {
         const addNewProduct = () => {
-                product.quantity = 1;
-                setCartArray([...cartArray, product]);   
+            product.quantity = 1;
+            setCartArray([...cartArray, product]);
         }
         cartArray.includes(product) ? product.quantity++ : addNewProduct();
-        setTotalPrice(totalPrice + product.product_price);    
+        setTotalPrice(totalPrice + product.product_price);
     }
 
-     //remove Product from Cart
-  const removeItem = (item) => {
-    setCartArray(products.filter(product => (product.id !== item.id)))
-    setTotalPrice(totalPrice - (item.quantity * item.product_price))
-  }
+    //remove Product from Cart
+    const removeItem = (item) => {
+        const itemPayment = (item.quantity * item.product_price)
+        setTotalPrice(totalPrice - itemPayment)
+        setCartArray(cartArray.filter(product => (product.id !== item.id)))
+    }
 
-return (
-    <AnimalsContext.Provider value={{ cartArray, totalPrice, products, addToCart, removeItem }}>
-        {props.children}
-    </AnimalsContext.Provider>
-)
+    //counter Item in Cart
+    // const handleQuantity = (e) => {
+    //     productQuantity + e >= 0 ? removeItem() : item.quantity + e
+    // }
+    
+    
+
+    return (
+        <AnimalsContext.Provider value={{ cartArray, totalPrice, products, addToCart, handleQuantity, removeItem }}>
+            {props.children}
+        </AnimalsContext.Provider>
+    )
 }
 
 export default AnimalsContextComponent; 
