@@ -19,7 +19,7 @@
   </a>
 
   <p align="center">
-    Website to get a short glance at my work-life: my work experiance, some of my projects, a possibility to get in touch
+    ECommerce Site to buy some fancy home animal stuff, provided by HEROKU through an API. Add and delete single Items from the Card. 
     <br />
     <br />
     <a href="https://aquin-animals-choice.netlify.app/">Demo</a>
