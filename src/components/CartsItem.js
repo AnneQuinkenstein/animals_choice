@@ -9,13 +9,13 @@ const CartsItem = (props) => {
             <div className='col'>{props.item.product_title}</div>
             <div className='col'>{props.item.product_price}</div>
             <div className='col'>{props.item.quantity}</div>
-            {/* <button onClick={() =>handleQuantity(e) }>
+            <button onClick={(e) =>handleQuantity(e, props.item)} value='+1'>
                 +1
           </button>
-            <button onClick={() =>handleQuantity(e) }>
+            <button onClick={(e) =>handleQuantity(e,props.item)} value='-1' >
                 -1
-          </button> */}
-            <button className="removeButton" onClick={() => removeItem(props.item)}><i class="material-icons">remove</i></button>
+          </button>
+            <button className="removeButton" onClick={() => removeItem(props.item)}><i className="material-icons">remove</i></button>
         </div >
     )
 }

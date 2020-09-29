@@ -35,9 +35,16 @@ const AnimalsContextComponent = (props) => {
     }
 
     //counter Item in Cart
-    // const handleQuantity = (e) => {
-    //     productQuantity + e >= 0 ? removeItem() : item.quantity + e
-    // }
+    const handleQuantity = (e, item) => {
+        const num = +e.target.value;
+        if (item.quantity + num <= 0) {
+            removeItem(item)
+        } else {
+            item.quantity = item.quantity + num
+            const itemPayment = (item.quantity * item.product_price)
+            setTotalPrice(totalPrice + (num * item.product_price));
+        }
+    }
     
     
 
