@@ -1,7 +1,4 @@
 
-##DEMO 
-https://aquin-animals-choice.netlify.app/
-
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links-->
 <!-- search and replace  portfolio2 -->
 
