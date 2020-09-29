@@ -107,33 +107,6 @@ nav ul li a {
   white-space: nowrap;
 }
 
-nav ul li a::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  border-radius: 25px;
-  z-index: -1;
-}
-
-nav ul li a:hover {
-  color: #0a4870;
-}
-
-nav ul li a:hover::before {
-  background: -webkit-gradient(linear, left top, left bottom, from(#e8edec), to(#d2d1d3));
-  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-  -webkit-box-shadow: 0px 3px 20px 0px black;
-          box-shadow: 0px 3px 20px 0px black;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  border-radius: 25px;
-}
-
 nav ul:hover {
   border: 0px solid white;
 }
@@ -155,9 +128,17 @@ nav .nav-cart p {
   color: #0a4870;
   font-weight: bold;
   font-size: 1.2rem;
-  margin: 0 30px;
-  position: relative;
   white-space: nowrap;
+  width: 300px;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 nav .nav-cart p span:hover {
@@ -547,6 +528,10 @@ mark {
   border-bottom: 2px solid yellow;
   background-color: transparent;
   color: #0a4870;
+}
+
+mark:hover {
+  background-color: yellow;
 }
 
 span {

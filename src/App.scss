@@ -103,26 +103,6 @@ nav {
         position: relative;
         cursor: pointer;
         white-space: nowrap;
-        &::before {
-          content: " ";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          transition: 0.2s;
-          @include radius(25px);
-          z-index: -1;
-        }
-        &:hover {
-          &::before {
-            background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-            box-shadow: 0px 3px 20px 0px black;
-            transform: scale(1.2);
-            @include radius(25px);
-          }
-          color: $blue;
-        }
       }
     }
     &:hover {
@@ -136,12 +116,14 @@ nav {
     height: min-content;
     padding: 12px 10px;
     p {
-      color: $blue;
+      color: #0a4870;
       font-weight: bold;
       font-size: 1.2rem;
-      margin: 0 30px;
-      position: relative;
       white-space: nowrap;
+      width: 300px;
+      min-width: min-content; 
+      display: flex;
+      justify-content: space-between;      
       span {
         &:hover {
           background: linear-gradient(to bottom, #e8edec, #d2d1d3);
@@ -390,6 +372,9 @@ mark {
   border-bottom: 2px solid yellow;
   background-color: transparent;
   color: $blue;
+  &:hover{
+    background-color: yellow; 
+  }
 }
 
 span {
