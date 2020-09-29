@@ -36,6 +36,7 @@ body {
     url("./components/images/background.png"),
     url("./components/images/background.png"), no-repeat bottom;
   background-size: cover;
+  font-family: Roboto;
 }
 
 a {
@@ -85,25 +86,25 @@ nav {
     display: inline-flex;
     height: min-content;
     align-items: center;
-    padding: 12px 10px;
-    margin-left: 3vw;
-    background-color: $brownshimmerlight;
-    @include radius(25px);
+    // padding: 12px 10px;
+    // margin-left: 3vw;
+    // background-color: $brownshimmerlight;
+    // @include radius(25px);
     li {
-      background-color: $brownshimmerlight;
-      @include radius(25px);
-      padding: 10px;
-      a {
-        list-style: none;
-        color: $blue;
-        font-weight: bold;
-        font-size: 1.2rem;
-        padding: 12px 16px;
-        margin: 0 30px;
-        position: relative;
-        cursor: pointer;
-        white-space: nowrap;
-      }
+      // background-color: $brownshimmerlight;
+      // @include radius(25px);
+      // padding: 10px;
+      // a {
+      //   list-style: none;
+      //   color: $blue;
+      //   font-weight: bold;
+      //   font-size: 1.2rem;
+      //   padding: 12px 16px;
+      //   margin: 0 30px;
+      //   position: relative;
+      //   cursor: pointer;
+      //   white-space: nowrap;
+      // }
     }
     &:hover {
       border: 0px solid white;
@@ -120,7 +121,7 @@ nav {
       font-weight: bold;
       font-size: 1.2rem;
       white-space: nowrap;
-      width: 300px;
+      width: 290px;
       min-width: min-content; 
       display: flex;
       justify-content: space-between;      
@@ -130,7 +131,7 @@ nav {
           box-shadow: 0px 3px 20px 0px black;
           border-radius: 25px;
           color: #0a4870;
-          padding: 6px 10px 6px 2px;
+          padding: 2px 10px 2px 2px;
         }
       }
     }

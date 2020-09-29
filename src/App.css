@@ -2,6 +2,7 @@ body {
   color: #0a4870;
   background: url("./components/images/kitten9.png"), url("./components/images/background.png"), url("./components/images/background.png"), no-repeat bottom;
   background-size: cover;
+  font-family: Roboto;
 }
 
 a {
@@ -83,28 +84,6 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 12px 10px;
-  margin-left: 3vw;
-  background-color: #422e0c36;
-  border-radius: 25px;
-}
-
-nav ul li {
-  background-color: #422e0c36;
-  border-radius: 25px;
-  padding: 10px;
-}
-
-nav ul li a {
-  list-style: none;
-  color: #0a4870;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 12px 16px;
-  margin: 0 30px;
-  position: relative;
-  cursor: pointer;
-  white-space: nowrap;
 }
 
 nav ul:hover {
@@ -129,7 +108,7 @@ nav .nav-cart p {
   font-weight: bold;
   font-size: 1.2rem;
   white-space: nowrap;
-  width: 300px;
+  width: 290px;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
@@ -148,7 +127,7 @@ nav .nav-cart p span:hover {
           box-shadow: 0px 3px 20px 0px black;
   border-radius: 25px;
   color: #0a4870;
-  padding: 6px 10px 6px 2px;
+  padding: 2px 10px 2px 2px;
 }
 
 .productslist {
