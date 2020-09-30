@@ -384,9 +384,12 @@ nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 3vh;
 }
 
 .productdetails .item-wrapper {
@@ -394,7 +397,6 @@ nav ul {
   height: 60vh;
   width: 60vh;
   margin: auto 0;
-  margin-right: 10vw;
 }
 
 .productdetails .item-wrapper span {
@@ -449,33 +451,6 @@ nav ul {
   min-width: 100%;
   min-height: 100%;
   opacity: 0.8;
-}
-
-.productdetails .info-wrapper {
-  font-size: 1.5rem;
-  color: #0a4870;
-  border-radius: 25px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  max-width: 45vw;
-  margin: 10vw;
-}
-
-.productdetails .info-wrapper p:first-child {
-  margin: 0 5vw;
 }
 
 @-webkit-keyframes animate {
@@ -536,6 +511,11 @@ span {
   border-right: 0.2px solid #422e0c36;
   border-radius: 0 0 25px 25px;
   padding: 0 10px 12px 10px;
+}
+
+.footer:hover {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
 }
 
 .footer div {

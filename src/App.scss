@@ -286,13 +286,14 @@ nav {
 
 .productdetails {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 3vh; 
   .item-wrapper {
     position: relative;
     height: 60vh;
     width: 60vh;
     margin: auto 0;
-    margin-right: 10vw;
     span {
       position: absolute;
       top: 0;
@@ -331,21 +332,6 @@ nav {
       }
     }
   }
-  .info-wrapper {
-    font-size: 1.5rem;
-    color: $blue;
-    @include radius(25px);
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: min-content;
-    align-items: flex-start;
-    max-width: 45vw;
-    margin: 10vw;
-    p:first-child {
-      margin: 0 5vw;
-    }
-  }
 }
 
 @keyframes animate {
@@ -382,6 +368,9 @@ span {
   border-right: 0.2px solid $brownshimmerlight;
   @include halfradius(25px);
   padding: 0 10px 12px 10px;
+  &:hover{
+    transform: translateY(3px)
+  }
   div {
     display: flex;
     @include halfradius(25px);
