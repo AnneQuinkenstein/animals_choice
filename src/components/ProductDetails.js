@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router";
 import { AnimalsContext } from "../contexts/AnimalsContext";
-import CardComponent from "./CartComponent"; 
+import CardComponent from "./ProductDetailsCard"; 
 
 const ProductDetails = () => {
   const { id } = useParams();
