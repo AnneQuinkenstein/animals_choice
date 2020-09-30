@@ -1,22 +1,101 @@
-import React, { useContext } from 'react';
-import { AnimalsContext } from '../contexts/AnimalsContext';
-import CartsItem from './CartsItem'; 
-const Cart = () => {
+import React, { useContext } from "react";
+import { AnimalsContext } from "../contexts/AnimalsContext";
+import { makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+import AddShoppingCartTwoToneIcon from "@material-ui/icons/AddShoppingCartTwoTone";
+import IconButton from "@material-ui/core/IconButton";
+import RemoveShoppingCartTwoToneIcon from "@material-ui/icons/RemoveShoppingCartTwoTone";
+import DeleteForeverTwoToneIcon from "@material-ui/icons/DeleteForeverTwoTone";
 
-const { cartArray, totalPrice } = useContext(AnimalsContext)
+const useStyles = makeStyles({
+  table: {
+    width: '50vw', 
+    fontSize: "1.3rem",
+    margin: 'auto', 
+  },
+});
 
-    return(
-        <>
-        <div className='row'>
-            <div className='col'>Item</div>
-            <div className='col'>Items Price</div>
-            <div className='col'>Quantity</div>
-        </div>
-        { cartArray.map(item=> <CartsItem item={item} key={item.id}/>)}
-        <div>totalPrice: {totalPrice} </div>
-        </>
-
-    )
+function priceRow(qty, unit) {
+  return qty * unit;
 }
 
-export default Cart; 
+export default function Cart() {
+  const {
+    cartArray,
+    totalPrice,
+    removeItem,
+    addOneItem,
+    removeOneItem,
+  } = useContext(AnimalsContext);
+  const classes = useStyles();
+
+  return (
+    <TableContainer style ={{width: '60vw', margin: 'auto'}}component={Paper}>
+      <Table className={classes.table} aria-label="spanning table">
+        <TableHead>
+          <TableRow>
+            <TableCell align="center" colSpan={3} style={{fontSize: '1.2rem'}}>
+              Details
+            </TableCell>
+            <TableCell align="right" style={{fontSize: '1.2rem'}}>Price</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell style={{fontSize: '1.2'}}>Desc</TableCell>
+            <TableCell align="right" style={{fontSize: '1.2rem'}}>Qty.</TableCell>
+            <TableCell align="left"></TableCell>
+             <TableCell align="center" style={{fontSize: '1.2rem'}}>Unit</TableCell>
+            <TableCell align="center" style={{fontSize: '1.2rem'}}>Sum</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {cartArray.map((item) => (
+            <TableRow key={item.id}>
+              <TableCell style={{fontSize: '1.2rem', padding: '1vh'}}><img src={item.product_image} style={{height: "50px"}}/> {item.product_title}</TableCell>
+              <TableCell align="right" style={{fontSize: '1rem'}}>{item.quantity}</TableCell>
+              <TableCell align="left">
+              <IconButton
+                  color="primary"
+                  aria-label="add to shopping cart"
+                  onClick={() => addOneItem(item)}
+                  style={{padding: '5px'}}
+                >
+                  <AddShoppingCartTwoToneIcon />
+                </IconButton>
+                <IconButton
+                  color="primary"
+                  aria-label="add to shopping cart"
+                  onClick={() => removeOneItem(item)}
+                  style={{padding: '5px'}}
+                >
+                  <RemoveShoppingCartTwoToneIcon />
+                </IconButton>
+                <IconButton
+                  color="primary"
+                  aria-label="add to shopping cart"
+                  onClick={() => removeItem(item)}
+                  style={{padding: '5px'}}
+                >
+                  <DeleteForeverTwoToneIcon />
+                </IconButton>                
+              </TableCell>
+              <TableCell align="center" style={{fontSize: '1rem'}}>{item.product_price}</TableCell>
+              <TableCell align="center" style={{fontSize: '1rem'}}>
+                {priceRow(item.quantity, item.product_price)}
+              </TableCell>
+            </TableRow>
+          ))}
+          <TableRow>
+            <TableCell colSpan={4} style={{fontSize: '1rem'}}>Total</TableCell>
+            <TableCell align="center" style={{fontSize: '1rem'}}>{totalPrice}</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
