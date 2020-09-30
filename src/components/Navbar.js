@@ -1,37 +1,56 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AnimalsContext } from "../contexts/AnimalsContext";
-import { BottomNavigationAction, Tooltip } from "@material-ui/core";
+import { IconButton, Tooltip, Typography } from "@material-ui/core";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
-import ShoppingCartTwoToneIcon from '@material-ui/icons/ShoppingCartTwoTone';
+import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
 
 const Navbar = () => {
   const { totalPrice } = useContext(AnimalsContext);
 
   return (
     <nav>
-      <div className="logo-wrapper">
-        <a href="https://www.linkedin.com/in/anne-quinkenstein/">
-          <img src="/images/logo.png" alt="logo AQ" />{" "}
-        </a>
-        <p>Animals Choice</p>
+      <div>
+        <div className="logo-wrapper">
+          <Tooltip title="Anne Quinkenstein">
+            <IconButton>
+              <a
+                className="logo-img"
+                href="https://www.linkedin.com/in/anne-quinkenstein/"
+                target="_blank"
+                style={{ opacity: 0.5 }}
+              >
+                <img src="/images/logo.png" alt="logo AQ" />{" "}
+              </a>
+            </IconButton>
+          </Tooltip>
+          <Typography>
+            <Link to="/">Animals Choice</Link>
+          </Typography>
+        </div>
+        <ul>
+          <Tooltip title="Home">
+            <li>
+              <Link to="/">
+                <IconButton>
+                  {" "}
+                  <HomeTwoToneIcon style={{ fontSize: 60 }} />{" "}
+                </IconButton>
+              </Link>
+            </li>
+          </Tooltip>
+          <Tooltip title="Cart">
+            <li>
+              <Link to="cart">
+                <IconButton>
+                  {" "}
+                  <ShoppingCartTwoToneIcon style={{ fontSize: 60 }} />{" "}
+                </IconButton>
+              </Link>
+            </li>
+          </Tooltip>
+        </ul>
       </div>
-      <ul>
-        <Tooltip title="Home">
-          <li>
-            <Link to="/">
-              <BottomNavigationAction icon={<HomeTwoToneIcon style={{ fontSize: 60 }}/>} label="Home" />
-            </Link>
-          </li>
-        </Tooltip>
-        <Tooltip title="Cart">
-          <li>
-            <Link to="cart">
-              <BottomNavigationAction icon={<ShoppingCartTwoToneIcon style={{ fontSize: 60 }}/>} label="Cart" />
-            </Link>
-          </li>
-        </Tooltip>
-      </ul>
       <div className="nav-cart">
         <p>
           <mark>Total Price </mark>{" "}

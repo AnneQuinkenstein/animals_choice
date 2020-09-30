@@ -12,6 +12,13 @@ $orange: #ff501e;
   border-radius: $val;
 }
 
+
+@mixin halfradius($val) {
+  -webkit-border-radius: 0 0 $val $val;
+  -moz-border-radius: 0 0 $val $val;
+  border-radius: 0 0 $val $val;
+}
+
 @mixin cardsOpen() {
   &::before {
     background: $brownshimmer;
@@ -34,9 +41,14 @@ body {
   color: $blue;
   background: url("./components/images/kitten9.png"),
     url("./components/images/background.png"),
-    url("./components/images/background.png"), no-repeat bottom;
+    url("./components/images/background.png");
   background-size: cover;
-  font-family: Roboto;
+  background-attachment: fixed; 
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
 }
 
 a {
@@ -59,25 +71,33 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  width: 95%;
-  background-color: $brownshimmerlight;
-  @include radius(25px);
-  border-bottom: 5px solid $orange;
-  margin: 3vh;
+  margin: 0 6vw;
   //Logo
-  .logo-wrapper {
-    background: transparent;
+  div {
     display: flex;
-    width: max-content;
     justify-content: center;
     align-items: center;
-    a {
-      height: 100%;
-      width: 7vw;
-      display: inherit;
-      img {
+    margin: 1vw;
+    .logo-wrapper {
+      background: transparent;
+      display: flex;
+      width: max-content;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      .logo-img {
         height: 100%;
-        width: 100%;
+        width: 80px;
+        display: inherit;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      p {
+        margin: 0 3vw;
+        font-size: 3rem;
+        font-weight: bold;
       }
     }
   }
@@ -86,56 +106,39 @@ nav {
     display: inline-flex;
     height: min-content;
     align-items: center;
-    // padding: 12px 10px;
-    // margin-left: 3vw;
-    // background-color: $brownshimmerlight;
-    // @include radius(25px);
-    li {
-      // background-color: $brownshimmerlight;
-      // @include radius(25px);
-      // padding: 10px;
-      // a {
-      //   list-style: none;
-      //   color: $blue;
-      //   font-weight: bold;
-      //   font-size: 1.2rem;
-      //   padding: 12px 16px;
-      //   margin: 0 30px;
-      //   position: relative;
-      //   cursor: pointer;
-      //   white-space: nowrap;
-      // }
-    }
-    &:hover {
-      border: 0px solid white;
-    }
+    justify-content: space-between;
+    margin: auto;
   }
-  //Cart - total amount
-  .nav-cart {
-    display: inline-flex;
-    align-items: center;
-    height: min-content;
-    padding: 12px 10px;
-    p {
-      color: #0a4870;
-      font-weight: bold;
-      font-size: 1.2rem;
-      white-space: nowrap;
-      width: 290px;
-      min-width: min-content; 
-      display: flex;
-      justify-content: space-between;      
-      span {
-        &:hover {
-          background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-          box-shadow: 0px 3px 20px 0px black;
-          border-radius: 25px;
-          color: #0a4870;
-          padding: 2px 10px 2px 2px;
-        }
+}
+//Cart - total amount
+.nav-cart {
+  display: inline-flex;
+  align-items: center;
+  height: min-content;
+  padding: 12px 10px;
+  p {
+    color: #0a4870;
+    font-weight: bold;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    width: 290px;
+    min-width: min-content;
+    display: flex;
+    justify-content: space-between;
+    mark {
+      border-bottom: 2px solid yellow;
+      background-color: transparent;
+      color: $blue;
+      padding: 3px 6px 0 6px; 
+      &:hover {
+        background-color: yellow;
       }
     }
+    span {
+      margin: 0 3px; 
+    }
   }
+ 
 }
 
 .productslist {
@@ -286,8 +289,8 @@ nav {
   justify-content: center;
   .item-wrapper {
     position: relative;
-    height: 70vh;
-    width: 70vh;
+    height: 65vh;
+    width: 65vh;
     margin: auto;
     margin-top: 4vh;
     margin-right: 10vw;
@@ -337,16 +340,11 @@ nav {
     flex-direction: column;
     justify-content: space-around;
     height: min-content;
-    background-color: white;
-    align-items: center;
+    align-items: flex-start;
     max-width: 45vw;
     margin: 10vw;
-    opacity: 0.8;
     p:first-child {
       margin: 0 5vw;
-    }
-    p {
-      margin: 2vh 5vw;
     }
   }
 }
@@ -369,42 +367,34 @@ nav {
   }
 }
 
-mark {
-  border-bottom: 2px solid yellow;
-  background-color: transparent;
-  color: $blue;
-  &:hover{
-    background-color: yellow; 
-  }
-}
+
 
 span {
   font-weight: bold;
 }
 
 .footer {
+  position: absolute; 
+  top: 0; 
+  right: 25vw; 
   font-size: 1.2rem;
-  color: $blue;
-  display: flex;
-  align-self: flex-end;
   margin: 0 5vw;
-  background-color: $brownshimmerlight;
-  border-left: 0.2px solid $orange;
-  @include radius(25px);
-  padding: 12px 10px;
-  margin: 0 5vw 5vh 0;
+  border-left: 0.2px solid $brownshimmerlight;
+  border-right: 0.2px solid $brownshimmerlight;
+  @include halfradius(25px);
+  padding: 0 10px 12px 10px;
   div {
     display: flex;
-    background-color: $brownshimmerlight;
-    @include radius(25px);
-    padding: 12px 10px;
-    border-left: 0.5px solid $orange;
+    @include halfradius(25px);
+    padding: 0 10px 12px 10px;
+    border-left: 0.5px solid $brownshimmerlight;
+    border-right: 0.2px solid $brownshimmerlight;
     a {
-      color: $blue;
-      background-color: $brownshimmerlight;
-      border-left: 0.3px solid $orange;
-      @include radius(25px);
-      padding: 5px 20px;
+      color: $brownshimmerlight; ;
+      border-left: 0.3px solid $brownshimmerlight;
+      border-right: 0.2px solid $brownshimmerlight;
+      @include halfradius(25px);
+      padding: 0 20px 5px 20px;
       &:hover {
         cursor: pointer;
       }
@@ -418,4 +408,10 @@ span {
 
 .col {
   flex: 1 1;
+}
+
+mark {
+  border-bottom: 2px solid yellow;
+  background-color: transparent;
+  color: $blue;
 }
