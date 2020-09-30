@@ -18,6 +18,7 @@ const Navbar = () => {
                 className="logo-img"
                 href="https://www.linkedin.com/in/anne-quinkenstein/"
                 target="_blank"
+                rel="noopener noreferrer"
                 style={{ opacity: 0.5 }}
               >
                 <img src="/images/logo.png" alt="logo AQ" />{" "}

@@ -41,7 +41,7 @@ const AnimalsContextComponent = (props) => {
             removeItem(item)
         } else {
             item.quantity = item.quantity + num
-            const itemPayment = (item.quantity * item.product_price)
+            // const itemPayment = (item.quantity * item.product_price)
             setTotalPrice(totalPrice + (num * item.product_price));
         }
     }
