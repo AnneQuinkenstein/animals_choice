@@ -1,7 +1,14 @@
 body {
   color: #0a4870;
-  background: url("./components/images/kitten9.png"), url("./components/images/background.png"), url("./components/images/background.png"), no-repeat bottom;
+  background: url("./components/images/kitten9.png"), url("./components/images/background.png"), url("./components/images/background.png");
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
 }
 
 a {
@@ -24,7 +31,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
 }
 
 nav {
@@ -39,25 +45,20 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 95%;
-  background-color: #422e0c36;
-  border-radius: 25px;
-  border-bottom: 5px solid #ff501e;
-  margin: 3vh;
+  margin: 0 6vw;
 }
 
 nav div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 1vw;
 }
 
 nav div .logo-wrapper {
@@ -68,17 +69,30 @@ nav div .logo-wrapper {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
 }
 
-nav div .logo-wrapper a {
+nav div .logo-wrapper .logo-img {
   height: 100%;
-  width: 10vh;
+  width: 80px;
   display: inherit;
 }
 
-nav div .logo-wrapper a img {
+nav div .logo-wrapper .logo-img img {
   height: 100%;
   width: 100%;
+}
+
+nav div .logo-wrapper p {
+  margin: 0 3vw;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 nav ul {
@@ -91,62 +105,13 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 12px 10px;
-  margin-left: 3vw;
-  background-color: #422e0c36;
-  border-radius: 25px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
 }
 
-nav ul li {
-  background-color: #422e0c36;
-  border-radius: 25px;
-  padding: 10px;
-}
-
-nav ul li a {
-  list-style: none;
-  color: #0a4870;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 12px 16px;
-  margin: 0 30px;
-  position: relative;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-nav ul li a::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  -webkit-transition: .2s;
-  transition: .2s;
-  border-radius: 25px;
-  z-index: -1;
-}
-
-nav ul li a:hover {
-  color: #0a4870;
-}
-
-nav ul li a:hover::before {
-  background: -webkit-gradient(linear, left top, left bottom, from(#e8edec), to(#d2d1d3));
-  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-  -webkit-box-shadow: 0px 3px 20px 0px black;
-          box-shadow: 0px 3px 20px 0px black;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  border-radius: 25px;
-}
-
-nav ul:hover {
-  border: 0px solid white;
-}
-
-nav .nav-cart {
+.nav-cart {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -159,13 +124,36 @@ nav .nav-cart {
   padding: 12px 10px;
 }
 
-nav .nav-cart p {
+.nav-cart p {
   color: #0a4870;
   font-weight: bold;
   font-size: 1.2rem;
-  margin: 0 30px;
-  position: relative;
   white-space: nowrap;
+  width: 290px;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-cart p mark {
+  border-bottom: 2px solid yellow;
+  background-color: transparent;
+  color: #0a4870;
+  padding: 3px 6px 0 6px;
+}
+
+.nav-cart p mark:hover {
+  background-color: yellow;
+}
+
+.nav-cart p span {
+  margin: 0 3px;
 }
 
 .productslist {
@@ -206,8 +194,8 @@ nav .nav-cart p {
   background-color: white;
   text-align: center;
   color: #0a4870;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   opacity: 0.7;
   border-bottom: 14px solid #ff501e;
 }
@@ -234,15 +222,15 @@ nav .nav-cart p {
 }
 
 .productslist .item-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(10, 72, 112, 0);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .productslist .item-card .buy-container {
@@ -265,8 +253,8 @@ nav .nav-cart p {
   width: 100%;
   -webkit-transform: translateY(-200px);
           transform: translateY(-200px);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .productslist .item-card .buy-container .content .btn {
@@ -278,8 +266,8 @@ nav .nav-cart p {
   font-size: 1.3em;
   color: white;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   border-radius: 25px;
 }
 
@@ -300,8 +288,8 @@ nav .nav-cart p {
   background: white;
   -webkit-transform: translateY(120px);
           transform: translateY(120px);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .productslist .item-card .informations-container .title {
@@ -314,7 +302,7 @@ nav .nav-cart p {
 }
 
 .productslist .item-card .informations-container .title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -340,8 +328,8 @@ nav .nav-cart p {
 
 .productslist .item-card .informations-container .more-information {
   opacity: 0;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .productslist .item-card .informations-container .more-information .info-and-date-container {
@@ -403,10 +391,9 @@ nav .nav-cart p {
 
 .productdetails .item-wrapper {
   position: relative;
-  height: 70vh;
-  width: 70vh;
-  margin: auto;
-  margin-top: 4vh;
+  height: 60vh;
+  width: 60vh;
+  margin: auto 0;
   margin-right: 10vw;
 }
 
@@ -480,21 +467,15 @@ nav .nav-cart p {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  background-color: white;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   max-width: 45vw;
   margin: 10vw;
-  opacity: 0.8;
 }
 
 .productdetails .info-wrapper p:first-child {
   margin: 0 5vw;
-}
-
-.productdetails .info-wrapper p {
-  margin: 2vh 5vw;
 }
 
 @-webkit-keyframes animate {
@@ -541,48 +522,38 @@ nav .nav-cart p {
   }
 }
 
-mark {
-  border-bottom: 2px solid yellow;
-  background-color: transparent;
-  color: #0a4870;
-}
-
 span {
   font-weight: bold;
 }
 
 .footer {
+  position: absolute;
+  top: 0;
+  right: 25vw;
   font-size: 1.2rem;
-  color: #0a4870;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   margin: 0 5vw;
-  background-color: #422e0c36;
-  border-left: 0.2px solid #ff501e;
-  border-radius: 25px;
-  padding: 12px 10px;
-  margin: 0 5vw 5vh 0;
+  border-left: 0.2px solid #422e0c36;
+  border-right: 0.2px solid #422e0c36;
+  border-radius: 0 0 25px 25px;
+  padding: 0 10px 12px 10px;
 }
 
 .footer div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #422e0c36;
-  border-radius: 25px;
-  padding: 12px 10px;
-  border-left: 0.5px solid #ff501e;
+  border-radius: 0 0 25px 25px;
+  padding: 0 10px 12px 10px;
+  border-left: 0.5px solid #422e0c36;
+  border-right: 0.2px solid #422e0c36;
 }
 
 .footer div a {
-  color: #0a4870;
-  background-color: #422e0c36;
-  border-left: 0.3px solid #ff501e;
-  border-radius: 25px;
-  padding: 5px 20px;
+  color: #422e0c36;
+  border-left: 0.3px solid #422e0c36;
+  border-right: 0.2px solid #422e0c36;
+  border-radius: 0 0 25px 25px;
+  padding: 0 20px 5px 20px;
 }
 
 .footer div a:hover {
@@ -599,5 +570,11 @@ span {
   -webkit-box-flex: 1;
       -ms-flex: 1 1;
           flex: 1 1;
+}
+
+mark {
+  border-bottom: 2px solid yellow;
+  background-color: transparent;
+  color: #0a4870;
 }
 /*# sourceMappingURL=App.css.map */

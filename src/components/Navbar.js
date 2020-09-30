@@ -1,27 +1,64 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AnimalsContext } from '../contexts/AnimalsContext';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AnimalsContext } from "../contexts/AnimalsContext";
+import { IconButton, Tooltip, Typography } from "@material-ui/core";
+import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
+import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
 
 const Navbar = () => {
-    const { totalPrice } = useContext(AnimalsContext);
+  const { totalPrice } = useContext(AnimalsContext);
 
-    return (
-        <nav>
-            <div>
-                <div className="logo-wrapper">
-                    <a href="https://www.linkedin.com/in/anne-quinkenstein/"><img src="/images/logo.png" alt='logo AQ' /> </a>
-                    <p>Animals Choice</p>
-                </div>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="cart">Cart</Link></li>
-                </ul>
-            </div>
-            <div className="nav-cart">
-                <p><mark>Total Price </mark> <span>&nbsp;&nbsp;{totalPrice}&nbsp;&nbsp;</span> Yards of Linen</p>
-            </div>
-        </nav>
-    )
-}
+  return (
+    <nav>
+      <div>
+        <div className="logo-wrapper">
+          <Tooltip title="Anne Quinkenstein">
+            <IconButton>
+              <a
+                className="logo-img"
+                href="https://www.linkedin.com/in/anne-quinkenstein/"
+                target="_blank"
+                style={{ opacity: 0.5 }}
+              >
+                <img src="/images/logo.png" alt="logo AQ" />{" "}
+              </a>
+            </IconButton>
+          </Tooltip>
+          <Typography>
+            <Link to="/">Animals Choice</Link>
+          </Typography>
+        </div>
+        <ul>
+          <Tooltip title="Home">
+            <li>
+              <Link to="/">
+                <IconButton>
+                  {" "}
+                  <HomeTwoToneIcon style={{ fontSize: 60 }} />{" "}
+                </IconButton>
+              </Link>
+            </li>
+          </Tooltip>
+          <Tooltip title="Cart">
+            <li>
+              <Link to="cart">
+                <IconButton>
+                  {" "}
+                  <ShoppingCartTwoToneIcon style={{ fontSize: 60 }} />{" "}
+                </IconButton>
+              </Link>
+            </li>
+          </Tooltip>
+        </ul>
+      </div>
+      <div className="nav-cart">
+        <p>
+          <mark>Total Price </mark>{" "}
+          <span>&nbsp;&nbsp;{totalPrice}&nbsp;&nbsp; Yards of Linen </span>
+        </p>
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar; 
+export default Navbar;

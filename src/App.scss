@@ -1,164 +1,155 @@
-$blue : #0a4870;
+$blue: #0a4870;
 $black: #000;
-$grey : #595858;
-$grey2 : #f0f0f0;
-$brownshimmer: #422e0c9b; 
+$grey: #595858;
+$grey2: #f0f0f0;
+$brownshimmer: #422e0c9b;
 $brownshimmerlight: #422e0c36;
-$orange: #ff501e; 
-
+$orange: #ff501e;
 
 @mixin radius($val) {
-    -webkit-border-radius: $val;
-    -moz-border-radius: $val;
-    border-radius: $val;
-  }
+  -webkit-border-radius: $val;
+  -moz-border-radius: $val;
+  border-radius: $val;
+}
+
+
+@mixin halfradius($val) {
+  -webkit-border-radius: 0 0 $val $val;
+  -moz-border-radius: 0 0 $val $val;
+  border-radius: 0 0 $val $val;
+}
 
 @mixin cardsOpen() {
-    &::before {
-      background: $brownshimmer; 
-    }
-    .buy-container {
-      .content {
-        opacity: 1;
-        transform: translateY(0px);
-      }
-    }
-    .informations-container {      
+  &::before {
+    background: $brownshimmer;
+  }
+  .buy-container {
+    .content {
+      opacity: 1;
       transform: translateY(0px);
-      .more-information {
-        opacity: 1;
-      }
     }
+  }
+  .informations-container {
+    transform: translateY(0px);
+    .more-information {
+      opacity: 1;
+    }
+  }
 }
 
-
-body{
-  color: $blue; 
-  background: url('./components/images/kitten9.png'), url('./components/images/background.png'), url('./components/images/background.png'),  no-repeat bottom;
-  background-size: cover; 
+body {
+  color: $blue;
+  background: url("./components/images/kitten9.png"),
+    url("./components/images/background.png"),
+    url("./components/images/background.png");
+  background-size: cover;
+  background-attachment: fixed; 
+  background-position: center;
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
 }
 
-a{
+a {
   text-decoration: none;
-  color: $blue; 
+  color: $blue;
   cursor: pointer;
 }
 
-.wrapper{ 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    align-items: center;
-    min-height: 100vh; 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-  
+
 //Navbar
-nav{
-  display: flex; 
+nav {
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  width: 95%; 
-  background-color: $brownshimmerlight;
-  @include radius(25px);
-  border-bottom: 5px solid $orange; 
-  margin: 3vh; 
-  div{
-    display: flex;
-    justify-content: space-between; 
-    flex-wrap: wrap; 
-    align-items: center; 
+  margin: 0 6vw;
   //Logo
-  .logo-wrapper{
-    background: transparent; 
-    display: flex; 
-    width: max-content; 
-    a{
-      height: 100%; 
-      width: 10vh; 
-      display: inherit; 
-      img {
-      height: 100%;
-      width: 100%; 
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+    .logo-wrapper {
+      background: transparent;
+      display: flex;
+      width: max-content;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      .logo-img {
+        height: 100%;
+        width: 80px;
+        display: inherit;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      p {
+        margin: 0 3vw;
+        font-size: 3rem;
+        font-weight: bold;
       }
     }
-  }
   }
   //navbar
-  ul{
+  ul {
     display: inline-flex;
-    height: min-content; 
-    align-items: center;
-    padding: 12px 10px;
-    margin-left: 3vw; 
-    background-color: $brownshimmerlight;
-   @include radius(25px);
-    li {
-      background-color: $brownshimmerlight;
-      @include radius(25px);
-      padding: 10px; 
-      a{
-        list-style: none;
-        color: $blue;
-        font-weight: bold;
-        font-size: 1.2rem; 
-        padding: 12px 16px;
-        margin: 0 30px;
-        position: relative;
-        cursor: pointer;
-        white-space: nowrap;
-        &::before {
-          content: " ";
-          position: absolute;
-          top: 0;
-          left:0;
-          height:100%;
-          width: 100%;
-          transition: .2s;
-          @include radius(25px);
-          z-index: -1; 
-        }
-        &:hover {
-          &::before {
-            background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-            box-shadow: 0px 3px 20px 0px black;
-            transform: scale(1.2);
-            @include radius(25px); 
-          }
-          color: $blue;
-        }
-      }
-    }
-    &:hover {
-      border: 0px solid white;
-    }
-  }
-  //Cart - total amount 
-  .nav-cart{
-    display: inline-flex;
-    align-items: center;
     height: min-content;
-    padding: 12px 10px;
-    p{
-      color: $blue;
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin: 0 30px;
-      position: relative;
-      white-space: nowrap;
-    }
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
   }
 }
-
-.productslist{
+//Cart - total amount
+.nav-cart {
+  display: inline-flex;
+  align-items: center;
+  height: min-content;
+  padding: 12px 10px;
+  p {
+    color: #0a4870;
+    font-weight: bold;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    width: 290px;
+    min-width: min-content;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    list-style: none;
-    padding:0;  
-  .item-card{
+    justify-content: space-between;
+    mark {
+      border-bottom: 2px solid yellow;
+      background-color: transparent;
+      color: $blue;
+      padding: 3px 6px 0 6px; 
+      &:hover {
+        background-color: yellow;
+      }
+    }
+    span {
+      margin: 0 3px; 
+    }
+  }
+ 
+}
+
+.productslist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  .item-card {
     position: relative;
-    width: 350px; 
+    width: 350px;
     display: flex;
     flex: 0 0 300px;
     flex-direction: column;
@@ -170,37 +161,37 @@ nav{
     background-position: 50% 25%;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: white; 
+    background-color: white;
     text-align: center;
     color: $blue;
-    transition: .3s;
-    opacity: 0.7;  
+    transition: 0.3s;
+    opacity: 0.7;
     border-bottom: 14px solid $orange;
-    &:nth-of-type(1){
-      border-right: 4px solid $orange; 
-    }; 
-    &:nth-of-type(2){
-      border-right: 4px solid $orange; 
-    }; 
-    &:nth-of-type(2){
-        background-position: 50% 20%;   
-        }
-    &:nth-of-type(3){
-      border-right: 4px solid $orange; 
-      }
-    &:nth-of-type(5){
-      background-position: 50% 5%;  
-      border-left: 4px solid $orange; 
-      }
-    &::before{
-      content: '';
+    &:nth-of-type(1) {
+      border-right: 4px solid $orange;
+    }
+    &:nth-of-type(2) {
+      border-right: 4px solid $orange;
+    }
+    &:nth-of-type(2) {
+      background-position: 50% 20%;
+    }
+    &:nth-of-type(3) {
+      border-right: 4px solid $orange;
+    }
+    &:nth-of-type(5) {
+      background-position: 50% 5%;
+      border-left: 4px solid $orange;
+    }
+    &::before {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(10,72,112, 0);
-      transition: .3s;
+      background: rgba(10, 72, 112, 0);
+      transition: 0.3s;
     }
     .buy-container {
       height: 200px;
@@ -213,8 +204,8 @@ nav{
         height: 100%;
         width: 100%;
         transform: translateY(-200px);
-        transition: .3s;
-        .btn {      
+        transition: 0.3s;
+        .btn {
           border: 3px solid white;
           padding: 10px 15px;
           background: none;
@@ -223,24 +214,24 @@ nav{
           font-size: 1.3em;
           color: white;
           cursor: pointer;
-          transition: .3s;
-          @include radius(25px);   
+          transition: 0.3s;
+          @include radius(25px);
           &:hover {
-            color: $blue; 
+            color: $blue;
             background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-            box-shadow: 0px 3px 20px 0px black;  
-            @include radius(25px);             
-           }
+            box-shadow: 0px 3px 20px 0px black;
+            @include radius(25px);
+          }
         }
       }
     }
-    
-    .informations-container{      
+
+    .informations-container {
       flex: 1 0 auto;
       padding: 20px;
       background: white;
       transform: translateY(120px);
-      transition: .3s;
+      transition: 0.3s;
       .title {
         position: relative;
         padding-bottom: 10px;
@@ -248,8 +239,8 @@ nav{
         margin-top: 5px;
         font-weight: bold;
         font-size: 1.2em;
-        &::after{
-          content: '';
+        &::after {
+          content: "";
           position: absolute;
           bottom: 0;
           left: 0;
@@ -263,12 +254,12 @@ nav{
       .price {
         display: flex;
         align-items: center;
-        justify-content: center; 
+        justify-content: center;
         margin-top: 5px;
       }
       .more-information {
-        opacity: 0; 
-        transition: .3s;
+        opacity: 0;
+        transition: 0.3s;
         .info-and-date-container {
           display: flex;
         }
@@ -278,7 +269,7 @@ nav{
         }
       }
     }
-    
+
     &:hover {
       @include cardsOpen();
     }
@@ -287,145 +278,139 @@ nav{
 
 @media (max-width: 768px) {
   ul {
-    .item-card{
+    .item-card {
       @include cardsOpen();
     }
   }
 }
 
-.productdetails{
-  display: flex; 
+.productdetails {
+  display: flex;
   justify-content: center;
-    .item-wrapper{
-        position: relative;
-        height: 70vh; 
-        width: 70vh; 
-        margin: auto; 
-        margin-top: 4vh;
-        margin-right: 10vw;
-      span{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%; 
-        width: 100%; 
-        border: 1px solid black;     
-            &:nth-child(1) {
-              @include radius(32% 58% 69% 43% / 48% 32% 59% 55%);
-                transition: 0.5s;
-                animation: animate 8s linear infinite;
-            }
-            &:nth-child(2) {
-              @include radius(38% 62% 63% 37% / 41% 44% 56% 59%);
-                transition: 0.5s;
-                animation: animate 6s linear infinite;
-            }
-            &:nth-child(3) {
-              @include radius(31% 45% 74% 35% / 38% 56% 51% 87%);
-                transition: 0.5s;
-                animation: animate2 12s linear infinite;
-            }
+  .item-wrapper {
+    position: relative;
+    height: 60vh;
+    width: 60vh;
+    margin: auto 0;
+    margin-right: 10vw;
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border: 1px solid black;
+      &:nth-child(1) {
+        @include radius(32% 58% 69% 43% / 48% 32% 59% 55%);
+        transition: 0.5s;
+        animation: animate 8s linear infinite;
+      }
+      &:nth-child(2) {
+        @include radius(38% 62% 63% 37% / 41% 44% 56% 59%);
+        transition: 0.5s;
+        animation: animate 6s linear infinite;
+      }
+      &:nth-child(3) {
+        @include radius(31% 45% 74% 35% / 38% 56% 51% 87%);
+        transition: 0.5s;
+        animation: animate2 12s linear infinite;
+      }
     }
-      div {
-        display: flex; 
-        justify-content: center;
-        align-content: center;
-        overflow: hidden; 
-        @include radius(50%); 
-        width: 100%; 
-        height: 100%; 
-        img{
-          min-width: 100%; 
-          min-height: 100%;
-          opacity: 0.8; 
-        }
-    } 
-  }  
-  .info-wrapper{
-    font-size: 1.5rem; 
-    color: $blue; 
+    div {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      overflow: hidden;
+      @include radius(50%);
+      width: 100%;
+      height: 100%;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        opacity: 0.8;
+      }
+    }
+  }
+  .info-wrapper {
+    font-size: 1.5rem;
+    color: $blue;
     @include radius(25px);
     display: inline-flex;
     flex-direction: column;
     justify-content: space-around;
-    height: min-content; 
-    background-color: white;
-    align-items: center;
-    max-width: 45vw; 
-    margin: 10vw; 
-    opacity: 0.8; 
-    p:first-child{
-      margin: 0 5vw; 
+    height: min-content;
+    align-items: flex-start;
+    max-width: 45vw;
+    margin: 10vw;
+    p:first-child {
+      margin: 0 5vw;
     }
-    p{
-      margin: 2vh 5vw; 
-    }
-  } 
+  }
 }
 
 @keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
   }
-  
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 @keyframes animate2 {
-    0% {
-        transform: rotate(360deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(360deg);
   }
-
-  mark {
-    border-bottom: 2px solid yellow; 
-    background-color: transparent; 
-    color: $blue; 
+  100% {
+    transform: rotate(0deg);
   }
+}
 
-  span {
-    font-weight: bold; 
-  }
 
-.footer{ 
+
+span {
+  font-weight: bold;
+}
+
+.footer {
+  position: absolute; 
+  top: 0; 
+  right: 25vw; 
   font-size: 1.2rem;
-  color: $blue; 
-  display: flex; 
-  align-self: flex-end; 
   margin: 0 5vw;
-  background-color: $brownshimmerlight;
-  border-left: 0.2px solid $orange;  
-  @include radius(25px);
-  padding: 12px 10px;
-  margin: 0 5vw 5vh 0; 
-  div{
-    display: flex; 
-    background-color: $brownshimmerlight;
-    @include radius(25px);
-    padding: 12px 10px;
-    border-left: 0.5px solid $orange;  
-  a {
-    color: $blue; 
-    background-color: $brownshimmerlight;
-    border-left: 0.3px solid $orange; 
-    @include radius(25px);
-    padding: 5px 20px; 
-    &:hover{
-      cursor: pointer;
+  border-left: 0.2px solid $brownshimmerlight;
+  border-right: 0.2px solid $brownshimmerlight;
+  @include halfradius(25px);
+  padding: 0 10px 12px 10px;
+  div {
+    display: flex;
+    @include halfradius(25px);
+    padding: 0 10px 12px 10px;
+    border-left: 0.5px solid $brownshimmerlight;
+    border-right: 0.2px solid $brownshimmerlight;
+    a {
+      color: $brownshimmerlight; ;
+      border-left: 0.3px solid $brownshimmerlight;
+      border-right: 0.2px solid $brownshimmerlight;
+      @include halfradius(25px);
+      padding: 0 20px 5px 20px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
+
+.row {
+  display: flex;
 }
 
-.row{
-  display: flex; 
+.col {
+  flex: 1 1;
 }
 
-.col{
-  flex: 1 1; 
+mark {
+  border-bottom: 2px solid yellow;
+  background-color: transparent;
+  color: $blue;
 }
