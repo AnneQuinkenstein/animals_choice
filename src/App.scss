@@ -44,6 +44,7 @@ body {
     url("./components/images/background.png");
   background-size: cover;
   background-attachment: fixed; 
+  background-position: center;
   font-size: 1rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
@@ -62,7 +63,6 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
 }
 
 //Navbar
@@ -289,10 +289,9 @@ nav {
   justify-content: center;
   .item-wrapper {
     position: relative;
-    height: 65vh;
-    width: 65vh;
-    margin: auto;
-    margin-top: 4vh;
+    height: 60vh;
+    width: 60vh;
+    margin: auto 0;
     margin-right: 10vw;
     span {
       position: absolute;
