@@ -516,6 +516,7 @@ span {
 .footer:hover {
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
+  color: #422e0c9b;
 }
 
 .footer div {
@@ -538,6 +539,7 @@ span {
 
 .footer div a:hover {
   cursor: pointer;
+  color: #422e0c9b;
 }
 
 .row {

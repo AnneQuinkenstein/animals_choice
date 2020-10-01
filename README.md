@@ -19,7 +19,8 @@
   </a>
 
   <p align="center">
-    ECommerce Site to buy some fancy home animal stuff, provided by HEROKU through an API. Add and delete single Items from the Card. 
+    ECommerce Site to buy some exciting animal toys, provided by HEROKU API.
+    Display single Items with Router.  Add and delete single Items from the Card + monitor the total Price. 
     <br />
     <br />
     <a href="https://aquin-animals-choice.netlify.app/">Demo</a>
@@ -36,6 +37,7 @@
 - [SCSS](https://sass-lang.com/)
 - [Heroku](https://www.heroku.com)
 - [React Star Ratings Library](https://www.npmjs.com/package/react-star-ratings)
+- [Material UI](https://material-ui.com/)
 
 ## Contact
 

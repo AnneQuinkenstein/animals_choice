@@ -56,7 +56,7 @@ export default function Cart() {
         <TableBody>
           {cartArray.map((item) => (
             <TableRow key={item.id}>
-              <TableCell style={{fontSize: '1.2rem', padding: '1vh'}}><img src={item.product_image} style={{height: "50px"}} alt="products image"/> {item.product_title}</TableCell>
+              <TableCell style={{fontSize: '1.2rem', padding: '1vh'}}><img src={item.product_image} style={{height: "50px"}} alt="pic of products "/> {item.product_title}</TableCell>
               <TableCell align="right" style={{fontSize: '1rem'}}>{item.quantity}</TableCell>
               <TableCell align="left">
               <IconButton
