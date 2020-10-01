@@ -369,7 +369,8 @@ span {
   @include halfradius(25px);
   padding: 0 10px 12px 10px;
   &:hover{
-    transform: translateY(3px)
+    transform: translateY(3px);
+    color: $brownshimmer;
   }
   div {
     display: flex;
@@ -385,6 +386,7 @@ span {
       padding: 0 20px 5px 20px;
       &:hover {
         cursor: pointer;
+        color: $brownshimmer;
       }
     }
   }
