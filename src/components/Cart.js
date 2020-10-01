@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from 'react-router-dom';
 import { AnimalsContext } from "../contexts/AnimalsContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -56,7 +57,12 @@ export default function Cart() {
         <TableBody>
           {cartArray.map((item) => (
             <TableRow key={item.id}>
-              <TableCell style={{fontSize: '1.2rem', padding: '1vh'}}><img src={item.product_image} style={{height: "50px"}} alt="pic of products "/> {item.product_title}</TableCell>
+              <TableCell style={{fontSize: '1.2rem', padding: '1vh'}}> 
+              <Link to={`/product/${item.id}`}>
+                <img src={item.product_image} style={{height: "50px"}} alt="pic of products "/>
+                </Link>
+                 {item.product_title}
+                 </TableCell>
               <TableCell align="right" style={{fontSize: '1rem'}}>{item.quantity}</TableCell>
               <TableCell align="left">
               <IconButton
