@@ -8,6 +8,7 @@ const AnimalsContextComponent = (props) => {
   const [products, setProducts] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  // commented because backend was slow
   // fetch('https://floating-temple-56492.herokuapp.com/products')
   //     .then(res => res.json())
   //     .then(data => setProducts(data))
@@ -15,6 +16,10 @@ const AnimalsContextComponent = (props) => {
   useEffect(() => {
     setProducts(productsdata);
   }, []);
+
+  useEffect(() => {
+    products && products.map(product => product.quantity = 0); 
+  }, [products]);
 
   // add Product to Cart or increase Quantity
   const addToCart = (product) => {

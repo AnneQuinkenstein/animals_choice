@@ -16,7 +16,7 @@ const ProductCard = (props) => {
       <div className="buy-container">
         <div className="content">
           <button className="btn" onClick={handleClick}>
-            Put in Cart
+            Add to Cart
           </button>
         </div>
       </div>

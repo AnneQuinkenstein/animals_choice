@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { AnimalsContext } from "../contexts/AnimalsContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -9,16 +9,16 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import AddShoppingCartTwoToneIcon from "@material-ui/icons/AddShoppingCartTwoTone";
 import IconButton from "@material-ui/core/IconButton";
+import AddShoppingCartTwoToneIcon from "@material-ui/icons/AddShoppingCartTwoTone";
 import RemoveShoppingCartTwoToneIcon from "@material-ui/icons/RemoveShoppingCartTwoTone";
 import DeleteForeverTwoToneIcon from "@material-ui/icons/DeleteForeverTwoTone";
 
 const useStyles = makeStyles({
   table: {
-    width: '50vw', 
+    width: "50vw",
     fontSize: "1.3rem",
-    margin: 'auto', 
+    margin: "auto",
   },
 });
 
@@ -37,39 +37,57 @@ export default function Cart() {
   const classes = useStyles();
 
   return (
-    <TableContainer style ={{width: '60vw', margin: 'auto'}}component={Paper}>
+    <TableContainer style={{ width: "60vw", margin: "auto" }} component={Paper}>
       <Table className={classes.table} aria-label="spanning table">
         <TableHead>
           <TableRow>
-            <TableCell align="center" colSpan={3} style={{fontSize: '1.2rem'}}>
+            <TableCell
+              align="center"
+              colSpan={3}
+              style={{ fontSize: "1.2rem" }}
+            >
               Details
             </TableCell>
-            <TableCell align="right" style={{fontSize: '1.2rem'}}>Price</TableCell>
+            <TableCell align="right" style={{ fontSize: "1.2rem" }}>
+              Price
+            </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell style={{fontSize: '1.2'}}>Desc</TableCell>
-            <TableCell align="right" style={{fontSize: '1.2rem'}}>Qty.</TableCell>
+            <TableCell style={{ fontSize: "1.2" }}>Desc</TableCell>
+            <TableCell align="right" style={{ fontSize: "1.2rem" }}>
+              Qty.
+            </TableCell>
             <TableCell align="left"></TableCell>
-             <TableCell align="center" style={{fontSize: '1.2rem'}}>Unit</TableCell>
-            <TableCell align="center" style={{fontSize: '1.2rem'}}>Sum</TableCell>
+            <TableCell align="center" style={{ fontSize: "1.2rem" }}>
+              Unit
+            </TableCell>
+            <TableCell align="center" style={{ fontSize: "1.2rem" }}>
+              Sum
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {cartArray.map((item) => (
             <TableRow key={item.id}>
-              <TableCell style={{fontSize: '1.2rem', padding: '1vh'}}> 
-              <Link to={`/product/${item.id}`}>
-                <img src={item.product_image} style={{height: "50px"}} alt="pic of products "/>
+              <TableCell style={{ fontSize: "1.2rem", padding: "1vh" }}>
+                <Link to={`/product/${item.id}`}>
+                  <img
+                    src={item.product_image}
+                    style={{ height: "50px" }}
+                    alt="pic of products "
+                  />
                 </Link>
-                 {item.product_title}
-                 </TableCell>
-              <TableCell align="right" style={{fontSize: '1rem'}}>{item.quantity}</TableCell>
+                {item.product_title}
+              </TableCell>
+              <TableCell align="right" style={{ fontSize: "1rem" }}>
+                {item.quantity}
+              </TableCell>
               <TableCell align="left">
-              <IconButton
+                <IconButton
                   color="primary"
                   aria-label="add to shopping cart"
                   onClick={() => addOneItem(item)}
-                  style={{padding: '5px'}}
+                  style={{ padding: "5px" }}
                 >
                   <AddShoppingCartTwoToneIcon />
                 </IconButton>
@@ -77,7 +95,7 @@ export default function Cart() {
                   color="primary"
                   aria-label="add to shopping cart"
                   onClick={() => removeOneItem(item)}
-                  style={{padding: '5px'}}
+                  style={{ padding: "5px" }}
                 >
                   <RemoveShoppingCartTwoToneIcon />
                 </IconButton>
@@ -85,20 +103,26 @@ export default function Cart() {
                   color="primary"
                   aria-label="add to shopping cart"
                   onClick={() => removeItem(item)}
-                  style={{padding: '5px'}}
+                  style={{ padding: "5px" }}
                 >
                   <DeleteForeverTwoToneIcon />
-                </IconButton>                
+                </IconButton>
               </TableCell>
-              <TableCell align="center" style={{fontSize: '1rem'}}>{item.product_price}</TableCell>
-              <TableCell align="center" style={{fontSize: '1rem'}}>
+              <TableCell align="center" style={{ fontSize: "1rem" }}>
+                {item.product_price}
+              </TableCell>
+              <TableCell align="center" style={{ fontSize: "1rem" }}>
                 {priceRow(item.quantity, item.product_price)}
               </TableCell>
             </TableRow>
           ))}
           <TableRow>
-            <TableCell colSpan={4} style={{fontSize: '1rem'}}>Total</TableCell>
-            <TableCell align="center" style={{fontSize: '1rem'}}>{totalPrice}</TableCell>
+            <TableCell colSpan={4} style={{ fontSize: "1rem" }}>
+              Total
+            </TableCell>
+            <TableCell align="center" style={{ fontSize: "1rem" }}>
+              {totalPrice}
+            </TableCell>
           </TableRow>
         </TableBody>
       </Table>
