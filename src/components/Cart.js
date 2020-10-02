@@ -20,6 +20,15 @@ const useStyles = makeStyles({
     fontSize: "1.3rem",
     margin: "auto",
   },
+  tableContainer: {
+    width: "60vw", 
+    margin: "auto",
+    ["@media (max-width:768px)"]: {
+      // eslint-disable-line no-useless-computed-key
+      width: '100%',
+      marginTop: '5vh', 
+    }
+  },
 });
 
 function priceRow(qty, unit) {
@@ -37,7 +46,7 @@ export default function Cart() {
   const classes = useStyles();
 
   return (
-    <TableContainer style={{ width: "60vw", margin: "auto" }} component={Paper}>
+    <TableContainer className={classes.tableContainer} component={Paper}>
       <Table className={classes.table} aria-label="spanning table">
         <TableHead>
           <TableRow>
