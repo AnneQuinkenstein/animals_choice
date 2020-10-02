@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
 import StarRatings from "react-star-ratings";
-import { AnimalsContext } from "../contexts/AnimalsContext";
 import { Link } from "react-router-dom";
+import CartActionIcons from './CartActionIcons'; 
 
 const ProductCard = (props) => {
-  const { addToCart } = useContext(AnimalsContext);
-
-  const handleClick = () => addToCart(props.product);
-
+ 
   return (
     <li
       className="item-card"
@@ -15,8 +12,8 @@ const ProductCard = (props) => {
     >
       <div className="buy-container">
         <div className="content">
-          <button className="btn" onClick={handleClick}>
-            Add to Cart
+          <button className="btn">
+          <CartActionIcons product={props.product}/>
           </button>
         </div>
       </div>

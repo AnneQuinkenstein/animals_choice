@@ -48,7 +48,14 @@ nav {
   margin: 0 6vw;
 }
 
-nav div {
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    z-index: 20;
+  }
+}
+
+nav > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,7 +68,7 @@ nav div {
   margin: 1vw;
 }
 
-nav div .logo-wrapper {
+nav > div .logo-wrapper {
   background: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -75,24 +82,35 @@ nav div .logo-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 3rem;
 }
 
-nav div .logo-wrapper .logo-img {
+nav > div .logo-wrapper .logo-img {
   height: 100%;
   width: 80px;
   display: inherit;
 }
 
-nav div .logo-wrapper .logo-img img {
+@media (max-width: 768px) {
+  nav > div .logo-wrapper .logo-img {
+    width: 40px;
+  }
+}
+
+nav > div .logo-wrapper .logo-img img {
   height: 100%;
   width: 100%;
 }
 
-nav div .logo-wrapper p {
+nav > div .logo-wrapper p {
   margin: 0 3vw;
   font-size: 3rem;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  nav > div .logo-wrapper p {
+    font-size: 1rem;
+  }
 }
 
 nav ul {
@@ -111,6 +129,12 @@ nav ul {
   margin: auto;
 }
 
+@media (max-width: 768px) {
+  nav ul {
+    padding: 0px;
+  }
+}
+
 .nav-cart {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -122,6 +146,12 @@ nav ul {
   height: -moz-min-content;
   height: min-content;
   padding: 12px 10px;
+}
+
+@media (max-width: 768px) {
+  .nav-cart {
+    display: none;
+  }
 }
 
 .nav-cart p {
@@ -152,8 +182,15 @@ nav ul {
   background-color: yellow;
 }
 
-.nav-cart p span {
-  width: 2o0px;
+.mediaqueryNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mediaqueryNav {
+    display: block;
+    height: 7vh;
+  }
 }
 
 .productslist {
@@ -259,10 +296,7 @@ nav ul {
 
 .productslist .item-card .buy-container .content .btn {
   border: 3px solid white;
-  padding: 10px 15px;
   background: none;
-  text-transform: uppercase;
-  font-weight: bold;
   font-size: 1.3em;
   color: white;
   cursor: pointer;
@@ -360,24 +394,6 @@ nav ul {
 
 .productslist .item-card:hover .informations-container .more-information {
   opacity: 1;
-}
-
-@media (max-width: 768px) {
-  ul .item-card::before {
-    background: #422e0c9b;
-  }
-  ul .item-card .buy-container .content {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  ul .item-card .informations-container {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  ul .item-card .informations-container .more-information {
-    opacity: 1;
-  }
 }
 
 .productdetails {
@@ -540,18 +556,6 @@ span {
 .footer div a:hover {
   cursor: pointer;
   color: #422e0c9b;
-}
-
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.col {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1;
-          flex: 1 1;
 }
 
 mark {
