@@ -38,6 +38,7 @@
 - [Heroku](https://www.heroku.com)
 - [React Star Ratings Library](https://www.npmjs.com/package/react-star-ratings)
 - [Material UI](https://material-ui.com/)
+- [react-media-hook](https://github.com/lessmess-dev/react-media-hook)
 
 ## Contact
 

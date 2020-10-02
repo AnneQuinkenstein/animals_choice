@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import StarRatings from "react-star-ratings";
+import React from "react";
 import { Link } from "react-router-dom";
-import CartActionIcons from './CartActionIcons'; 
+import CartActionIcons from "./CartActionIcons";
+import ProductInformation from "./ProductInformation";
+import { useMediaPredicate } from "react-media-hook";
 
 const ProductCard = (props) => {
- 
+  const phone = useMediaPredicate("(max-width: 768px)");
   return (
     <li
       className="item-card"
@@ -13,32 +14,17 @@ const ProductCard = (props) => {
       <div className="buy-container">
         <div className="content">
           <button className="btn">
-          <CartActionIcons product={props.product}/>
+            <CartActionIcons product={props.product} />
           </button>
         </div>
       </div>
       <div className="informations-container">
-        <Link to={`product/${props.product.id}`}>
-          <h2 className="title">{props.product.product_title}</h2>
-          <p className="price">
-            {" "}
-            <mark>Price </mark>{" "}
-            <span>&nbsp;&nbsp;{props.product.product_price}&nbsp;&nbsp;</span>{" "}
-            Yards of Linen
-          </p>
-          <div className="sub-title">
-            <StarRatings
-              rating={props.product.product_rating}
-              starRatedColor="orange"
-              starDimension="20px"
-            />
-          </div>
-          <div className="more-information">
-            <div className="info-and-date-container">
-              <p className="disclaimer">{props.product.product_description}</p>
-            </div>
-          </div>
-        </Link>
+        {!phone && (
+          <Link to={`product/${props.product.id}`}>
+            <ProductInformation {...props} />
+          </Link>
+        )}
+        {phone && <ProductInformation {...props} />}
       </div>
     </li>
   );
