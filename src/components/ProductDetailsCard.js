@@ -1,23 +1,17 @@
-import React, { useContext } from "react";
-import { Link } from 'react-router-dom';
+import React from "react";
 import StarRatings from "react-star-ratings";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { AnimalsContext } from "../contexts/AnimalsContext";
-import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import RemoveShoppingCartTwoToneIcon from "@material-ui/icons/RemoveShoppingCartTwoTone";
-import AddShoppingCartTwoToneIcon from "@material-ui/icons/AddShoppingCartTwoTone";
+import CartActionIcons from './CartActionIcons';
 
 const useStyles = makeStyles({
   root: {
     width: "32vw",
     margin: "auto",
     backgroundColor: "transparent",
-    borderRadius: " 10px 0 0  10px",
+    borderRadius: "20% / 50% 50% 20% 20%",
     padding: "5vh",
     borderRightColor: "transparent",
   },
@@ -33,13 +27,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SimpleCard({ matchProduct }) {
+export default function ProductDetailsCard({ matchProduct }) {
   const classes = useStyles();
-  const { addToCart, removeOneItem } = useContext(AnimalsContext);
-
-  const handleClick = () => addToCart(matchProduct);
-  const handleRemove = () => removeOneItem(matchProduct);
-
+  
   return (
     <Card className={classes.root}>
       <CardContent>
@@ -64,32 +54,11 @@ export default function SimpleCard({ matchProduct }) {
         <Typography className={classes.price} component="p">
           <mark>Price </mark>
           <span>&nbsp;&nbsp;{matchProduct.product_price}&nbsp;&nbsp;</span>{" "}
-          Yards of Linen
+          <span>Yards of Linen</span>
           <br />
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="medium" style={{ fontSize: "1.1rem" }}>
-          {`${matchProduct.quantity}`}
-          <Link to="/cart">
-          <ShoppingCartOutlinedIcon />
-          </Link>
-        </Button>
-        <Button
-          size="medium"
-          style={{ fontSize: "1.1rem" }}
-          onClick={handleClick}
-        >
-          <AddShoppingCartTwoToneIcon />
-        </Button>
-        <Button
-          size="medium"
-          style={{ fontSize: "1.1rem" }}
-          onClick={handleRemove}
-        >
-          <RemoveShoppingCartTwoToneIcon />
-        </Button>
-      </CardActions>
+      <CartActionIcons product={matchProduct}/>
     </Card>
   );
 }

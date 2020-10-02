@@ -1,14 +1,27 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AnimalsContext } from "../contexts/AnimalsContext";
+import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Tooltip, Typography } from "@material-ui/core";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
 
+const useStyles = makeStyles({
+  icon: {
+    fontSize: "60px",
+    ["@media (max-width:768px)"]: {
+      // eslint-disable-line no-useless-computed-key
+      fontSize: "40px",
+    },
+  },
+});
+
 const Navbar = () => {
   const { totalPrice } = useContext(AnimalsContext);
+  const classes = useStyles();
 
   return (
+    <>
     <nav>
       <div>
         <div className="logo-wrapper">
@@ -35,7 +48,7 @@ const Navbar = () => {
               <Link to="/">
                 <IconButton>
                   {" "}
-                  <HomeTwoToneIcon style={{ fontSize: 60 }} />{" "}
+                  <HomeTwoToneIcon className={classes.icon} />{" "}
                 </IconButton>
               </Link>
             </li>
@@ -45,7 +58,7 @@ const Navbar = () => {
               <Link to="cart">
                 <IconButton>
                   {" "}
-                  <ShoppingCartTwoToneIcon style={{ fontSize: 60 }} />{" "}
+                  <ShoppingCartTwoToneIcon className={classes.icon} />{" "}
                 </IconButton>
               </Link>
             </li>
@@ -55,10 +68,13 @@ const Navbar = () => {
       <div className="nav-cart">
         <p>
           <mark>Total Price </mark>{" "}
-          <span>&nbsp;&nbsp;{totalPrice}&nbsp;&nbsp; Yards of Linen </span>
+          <span>&nbsp;&nbsp;{totalPrice}&nbsp;&nbsp; 
+          Yards of Linen </span>
         </p>
       </div>
     </nav>
+    <div className="mediaqueryNav" ></div>
+    </>
   );
 };
 

@@ -12,7 +12,6 @@ $orange: #ff501e;
   border-radius: $val;
 }
 
-
 @mixin halfradius($val) {
   -webkit-border-radius: 0 0 $val $val;
   -moz-border-radius: 0 0 $val $val;
@@ -43,7 +42,7 @@ body {
     url("./components/images/background.png"),
     url("./components/images/background.png");
   background-size: cover;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-position: center;
   font-size: 1rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -66,14 +65,19 @@ a {
 }
 
 //Navbar
+
 nav {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   margin: 0 6vw;
+  @media (max-width: 768px) {
+    position: fixed;
+    z-index: 20;
+  }
   //Logo
-  div {
+  > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,11 +88,13 @@ nav {
       width: max-content;
       justify-content: center;
       align-items: center;
-      font-size: 3rem;
       .logo-img {
         height: 100%;
         width: 80px;
         display: inherit;
+        @media (max-width: 768px) {
+          width: 40px;
+        }
         img {
           height: 100%;
           width: 100%;
@@ -98,24 +104,33 @@ nav {
         margin: 0 3vw;
         font-size: 3rem;
         font-weight: bold;
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
     }
   }
-  //navbar
+  //Icons
   ul {
     display: inline-flex;
     height: min-content;
     align-items: center;
     justify-content: space-between;
     margin: auto;
+    @media (max-width: 768px) {
+      padding: 0px;
+    }
   }
 }
-//Cart - total amount
+//Total Amount
 .nav-cart {
   display: inline-flex;
   align-items: center;
   height: min-content;
   padding: 12px 10px;
+  @media (max-width: 768px) {
+    display: none;
+  }
   p {
     color: #0a4870;
     font-weight: bold;
@@ -129,16 +144,20 @@ nav {
       border-bottom: 2px solid yellow;
       background-color: transparent;
       color: $blue;
-      padding: 3px 6px 0 6px; 
+      padding: 3px 6px 0 6px;
       &:hover {
         background-color: yellow;
       }
     }
-    span {
-      width: 2o0px; 
-    }
   }
- 
+}
+
+.mediaqueryNav {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    height: 7vh;
+  }
 }
 
 .productslist {
@@ -207,10 +226,7 @@ nav {
         transition: 0.3s;
         .btn {
           border: 3px solid white;
-          padding: 10px 15px;
           background: none;
-          text-transform: uppercase;
-          font-weight: bold;
           font-size: 1.3em;
           color: white;
           cursor: pointer;
@@ -225,7 +241,6 @@ nav {
         }
       }
     }
-
     .informations-container {
       flex: 1 0 auto;
       padding: 20px;
@@ -269,26 +284,25 @@ nav {
         }
       }
     }
-
     &:hover {
       @include cardsOpen();
     }
   }
 }
 
-@media (max-width: 768px) {
-  ul {
-    .item-card {
-      @include cardsOpen();
-    }
-  }
-}
+// @media (max-width: 768px) {
+//   ul {
+//     .item-card {
+//       @include cardsOpen();
+//     }
+//   }
+// }
 
 .productdetails {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 3vh; 
+  margin-top: 3vh;
   .item-wrapper {
     position: relative;
     height: 60vh;
@@ -352,23 +366,21 @@ nav {
   }
 }
 
-
-
 span {
   font-weight: bold;
 }
 
 .footer {
-  position: absolute; 
-  top: 0; 
-  right: 25vw; 
+  position: absolute;
+  top: 0;
+  right: 25vw;
   font-size: 1.2rem;
   margin: 0 5vw;
   border-left: 0.2px solid $brownshimmerlight;
   border-right: 0.2px solid $brownshimmerlight;
   @include halfradius(25px);
   padding: 0 10px 12px 10px;
-  &:hover{
+  &:hover {
     transform: translateY(3px);
     color: $brownshimmer;
   }
@@ -379,7 +391,7 @@ span {
     border-left: 0.5px solid $brownshimmerlight;
     border-right: 0.2px solid $brownshimmerlight;
     a {
-      color: $brownshimmerlight; ;
+      color: $brownshimmerlight;
       border-left: 0.3px solid $brownshimmerlight;
       border-right: 0.2px solid $brownshimmerlight;
       @include halfradius(25px);
@@ -390,14 +402,6 @@ span {
       }
     }
   }
-}
-
-.row {
-  display: flex;
-}
-
-.col {
-  flex: 1 1;
 }
 
 mark {
