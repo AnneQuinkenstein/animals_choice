@@ -10,17 +10,19 @@ const AnimalsContextComponent = (props) => {
   const [render, setRender] = useState(false);
 
   // alternative if backend is slow
-// setProducts(productsdata);
+  // fetch('https://floating-temple-56492.herokuapp.com/products')
+  //   .then(res => res.json())
+  //   .then(data => setProducts(data))
 
   useEffect(() => {
-    fetch('https://floating-temple-56492.herokuapp.com/products')
-    .then(res => res.json())
-    .then(data => setProducts(data))
+    setProducts(productsdata);
   }, []);
 
   useEffect(() => {
-    { products && products.map((product) => (product.quantity = 0)) } ;
-    setRender(!render); 
+    {
+      products && products.map((product) => (product.quantity = 0));
+    }
+    setRender(!render);
   }, [products]);
 
   // add Product to Cart or increase Quantity
