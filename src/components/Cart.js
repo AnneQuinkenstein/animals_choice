@@ -13,6 +13,7 @@ import IconButton from "@material-ui/core/IconButton";
 import AddShoppingCartTwoToneIcon from "@material-ui/icons/AddShoppingCartTwoTone";
 import RemoveShoppingCartTwoToneIcon from "@material-ui/icons/RemoveShoppingCartTwoTone";
 import DeleteForeverTwoToneIcon from "@material-ui/icons/DeleteForeverTwoTone";
+import { useMediaPredicate } from "react-media-hook";
 
 const useStyles = makeStyles({
   table: {
@@ -21,13 +22,13 @@ const useStyles = makeStyles({
     margin: "auto",
   },
   tableContainer: {
-    width: "60vw", 
+    width: "60vw",
     margin: "auto",
     ["@media (max-width:768px)"]: {
       // eslint-disable-line no-useless-computed-key
-      width: '100%',
-      marginTop: '5vh', 
-    }
+      width: "100%",
+      marginTop: "5vh",
+    },
   },
 });
 
@@ -43,7 +44,10 @@ export default function Cart() {
     addOneItem,
     removeOneItem,
   } = useContext(AnimalsContext);
+
   const classes = useStyles();
+
+  const phone = useMediaPredicate("(max-width: 768px)");
 
   return (
     <TableContainer className={classes.tableContainer} component={Paper}>
@@ -62,7 +66,7 @@ export default function Cart() {
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell style={{ fontSize: "1.2" }}>Desc</TableCell>
+            <TableCell style={{ fontSize: "1.2rem" }}>Item</TableCell>
             <TableCell align="right" style={{ fontSize: "1.2rem" }}>
               Qty.
             </TableCell>
@@ -79,16 +83,16 @@ export default function Cart() {
           {cartArray.map((item) => (
             <TableRow key={item.id}>
               <TableCell style={{ fontSize: "1.2rem", padding: "1vh" }}>
-                <Link to={`/product/${item.id}`}>
+                {!phone && <Link to={`/product/${item.id}`}>
                   <img
                     src={item.product_image}
                     style={{ height: "50px" }}
                     alt="pic of products "
                   />
-                </Link>
+                </Link>}
                 {item.product_title}
               </TableCell>
-              <TableCell align="right" style={{ fontSize: "1rem" }}>
+              <TableCell align="right" style={{ fontSize: "1rem", padding: "1vh" }}>
                 {item.quantity}
               </TableCell>
               <TableCell align="left">
@@ -117,10 +121,10 @@ export default function Cart() {
                   <DeleteForeverTwoToneIcon />
                 </IconButton>
               </TableCell>
-              <TableCell align="center" style={{ fontSize: "1rem" }}>
+              <TableCell align="center" style={{ fontSize: "1rem", padding: "1vh" }}>
                 {item.product_price}
               </TableCell>
-              <TableCell align="center" style={{ fontSize: "1rem" }}>
+              <TableCell align="center" style={{ fontSize: "1rem", padding: "1vh"  }}>
                 {priceRow(item.quantity, item.product_price)}
               </TableCell>
             </TableRow>
