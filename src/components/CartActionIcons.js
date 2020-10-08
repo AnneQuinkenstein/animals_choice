@@ -25,14 +25,14 @@ const CartActionIcons = ({ product }) => {
         </Button>
         <Button
           size="medium"
-          style={{ fontSize: "1.1rem" }}
+          style={{ fontSize: "1.1rem", minWidth: 0, margin: 0}}
           onClick={handleClick}
         >
           <AddShoppingCartTwoToneIcon />
         </Button>
         <Button
           size="medium"
-          style={{ fontSize: "1.1rem" }}
+          style={{ fontSize: "1.1rem" , minWidth: 0, margin: 0}}
           onClick={handleRemove}
         >
           <RemoveShoppingCartTwoToneIcon />
