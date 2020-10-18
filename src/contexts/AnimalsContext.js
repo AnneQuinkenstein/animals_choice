@@ -25,6 +25,17 @@ const AnimalsContextComponent = (props) => {
     setRender(!render);
   }, [products]);
 
+  // start 
+  // const choice = () => {
+  //   if (1==1){
+  //     return products.filter(product => product.product_description.includes('dog'));
+  //   } else if (1==1){
+  //     return products.filter(product => product.product_description.includes('cat'));
+  //   } else {
+      
+  //   }
+  // }
+
   // add Product to Cart or increase Quantity
   const addToCart = (product) => {
     const addNewProduct = () => {

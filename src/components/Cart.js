@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     width: "50vw",
     fontSize: "1.3rem",
     margin: "auto",
+    borderRadius: '20px', 
   },
   tableContainer: {
     width: "60vw",
@@ -66,15 +67,15 @@ export default function Cart() {
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell style={{ fontSize: "1.2rem" }}>Item</TableCell>
-            <TableCell align="right" style={{ fontSize: "1.2rem" }}>
+            <TableCell style={{ fontSize: "1.2rem", padding: "10px" }}>Item</TableCell>
+            <TableCell align="right" style={{ fontSize: "1.2rem", padding: "10px" }}>
               Qty.
             </TableCell>
             <TableCell align="left"></TableCell>
-            <TableCell align="center" style={{ fontSize: "1.2rem" }}>
+            <TableCell align="center" style={{ fontSize: "1.2rem", padding: "10px" }}>
               Unit
             </TableCell>
-            <TableCell align="center" style={{ fontSize: "1.2rem" }}>
+            <TableCell align="center" style={{ fontSize: "1.2rem", padding: "10px" }}>
               Sum
             </TableCell>
           </TableRow>
@@ -82,7 +83,7 @@ export default function Cart() {
         <TableBody>
           {cartArray.map((item) => (
             <TableRow key={item.id}>
-              <TableCell style={{ fontSize: "1.2rem", padding: "1vh" }}>
+              <TableCell style={{ fontSize: "1.2rem", padding: "10px" }}>
                 {!phone && <Link to={`/product/${item.id}`}>
                   <img
                     src={item.product_image}
@@ -92,7 +93,7 @@ export default function Cart() {
                 </Link>}
                 {item.product_title}
               </TableCell>
-              <TableCell align="right" style={{ fontSize: "1rem", padding: "1vh" }}>
+              <TableCell align="right" style={{ fontSize: "1rem", padding: "10px" }}>
                 {item.quantity}
               </TableCell>
               <TableCell align="left">
@@ -121,19 +122,19 @@ export default function Cart() {
                   <DeleteForeverTwoToneIcon />
                 </IconButton>
               </TableCell>
-              <TableCell align="center" style={{ fontSize: "1rem", padding: "1vh" }}>
+              <TableCell align="center" style={{ fontSize: "1rem", padding: "10px" }}>
                 {item.product_price}
               </TableCell>
-              <TableCell align="center" style={{ fontSize: "1rem", padding: "1vh"  }}>
+              <TableCell align="center" style={{ fontSize: "1rem", padding: "10px"  }}>
                 {priceRow(item.quantity, item.product_price)}
               </TableCell>
             </TableRow>
           ))}
           <TableRow>
-            <TableCell colSpan={4} style={{ fontSize: "1rem" }}>
+            <TableCell colSpan={4} style={{ fontSize: "1rem", fontWeight: "900" }}>
               Total
             </TableCell>
-            <TableCell align="center" style={{ fontSize: "1rem" }}>
+            <TableCell align="center" style={{ fontSize: "1rem", fontWeight: "900" }}>
               {totalPrice}
             </TableCell>
           </TableRow>
