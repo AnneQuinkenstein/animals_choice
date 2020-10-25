@@ -1,15 +1,26 @@
-import React, { useContext } from 'react';
-import ProductCard from './ProductCard'; 
-import { AnimalsContext } from '../contexts/AnimalsContext';
+import React, { useContext } from "react";
+import ProductCard from "./ProductCard";
+import { AnimalsContext } from "../contexts/AnimalsContext";
 
 const ProductsList = () => {
-  const { products } = useContext(AnimalsContext);
-  
-  return (
-    <ul className="productslist">
-      { products && products.map(product => <ProductCard product={product} key={product.id}/>) }
-    </ul>
-  );
-}
+  const { products, selectedProducts } = useContext(AnimalsContext);
 
-export default ProductsList; 
+  const renderProducts = () => {
+    if (selectedProducts) {
+      return selectedProducts.map((product) => (
+        <ProductCard product={product} key={product.id} />
+      ));
+    } else {
+      return (
+        products &&
+        products.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))
+      );
+    }
+  };
+
+  return <ul className="productslist">{renderProducts()}</ul>;
+};
+
+export default ProductsList;

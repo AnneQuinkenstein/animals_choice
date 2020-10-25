@@ -8,6 +8,9 @@ const AnimalsContextComponent = (props) => {
   const [products, setProducts] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
   const [render, setRender] = useState(false);
+  const [selectedProducts, setSelectedProducts] = useState(null); 
+
+  const [selectedAnimal, setSelectedAnimal] = useState("all"); 
 
   // alternative if backend is slow
   // fetch('https://floating-temple-56492.herokuapp.com/products')
@@ -19,22 +22,29 @@ const AnimalsContextComponent = (props) => {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line no-lone-blocks
     {
       products && products.map((product) => (product.quantity = 0));
     }
     setRender(!render);
   }, [products]);
 
-  // start 
-  // const choice = () => {
-  //   if (1==1){
-  //     return products.filter(product => product.product_description.includes('dog'));
-  //   } else if (1==1){
-  //     return products.filter(product => product.product_description.includes('cat'));
-  //   } else {
-      
-  //   }
-  // }
+  // select Cat/Dog Products 
+  const handleCatsChoice = () => {
+    setSelectedProducts(products.filter(product => !product.product_description.includes('dog')));
+    setSelectedAnimal("cat")
+  }
+
+  const handleDogsChoice = () => {
+    setSelectedProducts(products.filter(product => !product.product_description.includes('cat')));
+    setSelectedAnimal("dog")
+  }
+
+  const handleAnimalsChoice = () => {
+    setSelectedProducts(null);
+    setSelectedAnimal("all")
+  }
+  
 
   // add Product to Cart or increase Quantity
   const addToCart = (product) => {
@@ -74,10 +84,15 @@ const AnimalsContextComponent = (props) => {
         cartArray,
         totalPrice,
         products,
+        selectedProducts,
         addOneItem,
         addToCart,
+        handleAnimalsChoice,
+        handleCatsChoice, 
+        handleDogsChoice,
         removeItem,
         removeOneItem,
+        selectedAnimal,
       }}
     >
       {props.children}

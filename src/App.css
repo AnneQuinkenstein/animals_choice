@@ -37,15 +37,14 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 6vw;
+  margin: 0 1vw;
 }
 
 @media (max-width: 768px) {
@@ -467,6 +466,7 @@ nav ul {
   min-width: 100%;
   min-height: 100%;
   opacity: 0.8;
+  border-radius: 50%;
 }
 
 @-webkit-keyframes animate {

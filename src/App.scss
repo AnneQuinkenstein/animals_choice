@@ -68,10 +68,10 @@ a {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-  margin: 0 6vw;
+  margin: 0 1vw;
   @media (max-width: 768px) {
     position: fixed;
     z-index: 20;
