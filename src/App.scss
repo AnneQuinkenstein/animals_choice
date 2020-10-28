@@ -290,14 +290,6 @@ nav {
   }
 }
 
-// @media (max-width: 768px) {
-//   ul {
-//     .item-card {
-//       @include cardsOpen();
-//     }
-//   }
-// }
-
 .productdetails {
   display: flex;
   align-items: center;
@@ -411,9 +403,21 @@ mark {
   color: $blue;
 }
 
-.select{
+.select {
   display: flex;
   justify-content: space-around;
-  width: 60vw; 
-  margin: auto; 
+  width: 60vw;
+  margin: auto;
+  @media (max-width: 768px) {
+    width: 80vw;
+    margin: 0 auto; 
+    padding-left: 0;
+  }
+  .firstSelect {
+    padding: 12px;
+    align-self: center; 
+    @media (max-width: 768px) {
+      padding: 0px;
+    }
+  }
 }

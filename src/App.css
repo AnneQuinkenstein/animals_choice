@@ -573,4 +573,25 @@ mark {
   width: 60vw;
   margin: auto;
 }
+
+@media (max-width: 768px) {
+  .select {
+    width: 80vw;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+}
+
+.select .firstSelect {
+  padding: 12px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media (max-width: 768px) {
+  .select .firstSelect {
+    padding: 0px;
+  }
+}
 /*# sourceMappingURL=App.css.map */

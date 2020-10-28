@@ -25,10 +25,10 @@ const ProductsList = () => {
 
   return <>
          <ul className="select">
-          <Tooltip style={{padding: "12px"}} title="Toys for all">
-              <li>
+          <Tooltip title="Toys for all">
+              <li className="firstSelect">
                 <IconButton onClick={handleAnimalsChoice}>
-                TOYS FOR ALL
+                 ALL
                 </IconButton>
               </li>
             </Tooltip> 
