@@ -307,7 +307,7 @@ nav {
     position: relative;
     height: 60vh;
     width: 60vh;
-    margin: auto 0;
+    margin: auto;
     span {
       position: absolute;
       top: 0;
@@ -409,4 +409,11 @@ mark {
   border-bottom: 2px solid yellow;
   background-color: transparent;
   color: $blue;
+}
+
+.select{
+  display: flex;
+  justify-content: space-around;
+  width: 60vw; 
+  margin: auto; 
 }

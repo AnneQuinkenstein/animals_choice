@@ -5,8 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Tooltip, Typography } from "@material-ui/core";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
-import cat from "./images/cat.png";
-import dog from "./images/dog.png";
 
 const useStyles = makeStyles({
   icon: {
@@ -55,7 +53,9 @@ const Navbar = () => {
                 </Link>
               </li>
             </Tooltip>
-            <Tooltip title="Cart">
+          </ul>
+          <ul>
+          <Tooltip title="Cart">
               <li>
                 <Link to="cart">
                   <IconButton>
@@ -65,31 +65,6 @@ const Navbar = () => {
                 </Link>
               </li>
             </Tooltip>
-          </ul>
-          <ul>
-          <Tooltip title="Toys for all">
-              <li>
-                <IconButton onClick={handleAnimalsChoice}>
-                  ALL
-                </IconButton>
-              </li>
-            </Tooltip> 
-            <Tooltip title="Toys for cats">
-              <li>
-                <IconButton onClick={handleCatsChoice}>
-                  {" "}
-                  <img src={cat} alt={"cat"} style={{ height: `${(selectedAnimal==="cat") ?  "80px" : "60px"}` }}/>
-                </IconButton>
-              </li>
-            </Tooltip>
-            <Tooltip title="Toys for dogs">
-              <li>
-                <IconButton onClick={handleDogsChoice}>
-                  {" "}
-                  <img src={dog} alt={"dog"} style={{ height: `${(selectedAnimal==="dog") ?  "80px" : "60px"}` }} />{" "}
-                </IconButton>
-              </li>
-            </Tooltip> 
           </ul>
         </div>
         <div className="nav-cart">

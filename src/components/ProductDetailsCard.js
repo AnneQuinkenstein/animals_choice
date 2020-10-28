@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     margin: "auto",
     backgroundColor: "transparent",
     borderRadius: "20% / 50% 50% 20% 20%",
-    padding: "5vh",
+    padding: "3vh",
     borderRightColor: "transparent",
   },
   title: {

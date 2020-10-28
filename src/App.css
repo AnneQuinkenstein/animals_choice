@@ -411,7 +411,7 @@ nav ul {
   position: relative;
   height: 60vh;
   width: 60vh;
-  margin: auto 0;
+  margin: auto;
 }
 
 .productdetails .item-wrapper span {
@@ -562,5 +562,15 @@ mark {
   border-bottom: 2px solid yellow;
   background-color: transparent;
   color: #0a4870;
+}
+
+.select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 60vw;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */
