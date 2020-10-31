@@ -37,8 +37,9 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;
@@ -175,10 +176,25 @@ nav ul {
   background-color: transparent;
   color: #0a4870;
   padding: 3px 6px 0 6px;
+  margin: -2px;
 }
 
 .nav-cart p mark:hover {
   background-color: yellow;
+  border-radius: 5px;
+}
+
+.nav-cart p div {
+  border-bottom: 2px solid yellow;
+  background-color: transparent;
+  color: #0a4870;
+  padding: 3px 6px 0 6px;
+  margin: -2px;
+}
+
+.nav-cart p div:hover {
+  background-color: yellow;
+  border-radius: 5px;
 }
 
 .mediaqueryNav {
@@ -517,7 +533,7 @@ span {
   font-weight: bold;
 }
 
-.footer {
+.topper {
   position: absolute;
   top: 0;
   right: 25vw;
@@ -529,13 +545,13 @@ span {
   padding: 0 10px 12px 10px;
 }
 
-.footer:hover {
+.topper:hover {
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
   color: #422e0c9b;
 }
 
-.footer div {
+.topper div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -545,7 +561,7 @@ span {
   border-right: 0.2px solid #422e0c36;
 }
 
-.footer div a {
+.topper div a {
   color: #422e0c36;
   border-left: 0.3px solid #422e0c36;
   border-right: 0.2px solid #422e0c36;
@@ -553,7 +569,7 @@ span {
   padding: 0 20px 5px 20px;
 }
 
-.footer div a:hover {
+.topper div a:hover {
   cursor: pointer;
   color: #422e0c9b;
 }
@@ -570,7 +586,6 @@ mark {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 60vw;
   margin: auto;
 }
 

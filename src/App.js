@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Topper from './components/Topper';
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
 import AnimalsContextComponent from './contexts/AnimalsContext';
@@ -23,7 +23,7 @@ function App() {
           </Routes>
         </AnimalsContextComponent>
       </div>
-      <Footer />
+      <Topper />
     </div>
   );
 }

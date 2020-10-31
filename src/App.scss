@@ -68,7 +68,7 @@ a {
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   margin: 0 1vw;
@@ -145,9 +145,23 @@ nav {
       background-color: transparent;
       color: $blue;
       padding: 3px 6px 0 6px;
+      margin: -2px; 
       &:hover {
         background-color: yellow;
+        border-radius: 5px; 
       }
+    }
+    div{
+      border-bottom: 2px solid yellow;
+      background-color: transparent;
+      color: $blue;
+      padding: 3px 6px 0 6px;
+      margin: -2px; 
+      &:hover {
+        background-color: yellow;
+        border-radius: 5px; 
+      }
+
     }
   }
 }
@@ -363,7 +377,7 @@ span {
   font-weight: bold;
 }
 
-.footer {
+.topper {
   position: absolute;
   top: 0;
   right: 25vw;
@@ -406,7 +420,6 @@ mark {
 .select {
   display: flex;
   justify-content: space-around;
-  width: 60vw;
   margin: auto;
   @media (max-width: 768px) {
     width: 80vw;

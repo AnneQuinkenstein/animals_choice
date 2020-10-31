@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { AnimalsContext } from "../contexts/AnimalsContext";
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Tooltip, Typography } from "@material-ui/core";
-import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
+import ToysSelection from './ToysSelection'; 
 
 const useStyles = makeStyles({
   icon: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 });
 
 const Navbar = () => {
-  const { selectedAnimal, totalPrice, handleCatsChoice, handleDogsChoice, handleAnimalsChoice } = useContext(AnimalsContext);
+  const { totalPrice } = useContext(AnimalsContext);
   const classes = useStyles();
 
   return (
@@ -25,53 +25,28 @@ const Navbar = () => {
       <nav style={{ width: "100vw" }}>
         <div>
           <div className="logo-wrapper">
-            <Tooltip title="Anne Quinkenstein">
-              <IconButton>
-                <a
-                  className="logo-img"
-                  href="https://www.linkedin.com/in/anne-quinkenstein/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ opacity: 0.5 }}
-                >
-                  <img src="/images/logo.png" alt="logo AQ" />{" "}
-                </a>
-              </IconButton>
-            </Tooltip>
             <Typography>
               <Link to="/">Animals Choice</Link>
             </Typography>
           </div>
-          <ul>
-            <Tooltip title="Home">
-              <li>
-                <Link to="/">
-                  <IconButton>
-                    {" "}
-                    <HomeTwoToneIcon className={classes.icon} />{" "}
-                  </IconButton>
-                </Link>
-              </li>
-            </Tooltip>
-          </ul>
-          <ul>
-          <Tooltip title="Cart">
-              <li>
-                <Link to="cart">
-                  <IconButton>
-                    {" "}
-                    <ShoppingCartTwoToneIcon className={classes.icon} />{" "}
-                  </IconButton>
-                </Link>
-              </li>
-            </Tooltip>
-          </ul>
         </div>
+        <ToysSelection />
         <div className="nav-cart">
           <p>
             <mark>Total Price </mark>{" "}
-            <span>&nbsp;&nbsp;{totalPrice}&nbsp;&nbsp; Yards of Linen </span>
+            <div className="totalPrice">&nbsp;{totalPrice}&nbsp;</div>
+            <span>
+             Yards of Linen &nbsp;&nbsp;
+            </span>
           </p>
+          <Tooltip title="Cart">
+            <Link to="cart">
+              <IconButton>
+                {" "}
+                <ShoppingCartTwoToneIcon className={classes.icon} />{" "}
+              </IconButton>
+            </Link>
+          </Tooltip>
         </div>
       </nav>
       <div className="mediaqueryNav"></div>
