@@ -320,7 +320,7 @@ nav {
       left: 0;
       height: 100%;
       width: 100%;
-      border: 1px solid black;
+      border: 1px solid $brownshimmer;
       &:nth-child(1) {
         @include radius(32% 58% 69% 43% / 48% 32% 59% 55%);
         transition: 0.5s;
@@ -380,7 +380,7 @@ span {
 .topper {
   position: absolute;
   top: 0;
-  right: 25vw;
+  left: 20vw;
   font-size: 1.2rem;
   margin: 0 5vw;
   border-left: 0.2px solid $brownshimmerlight;

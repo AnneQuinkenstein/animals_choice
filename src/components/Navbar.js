@@ -25,7 +25,7 @@ const Navbar = () => {
       <nav style={{ width: "100vw" }}>
         <div>
           <div className="logo-wrapper">
-            <Typography>
+            <Typography style={{ fontSize: "2em"}}>
               <Link to="/">Animals Choice</Link>
             </Typography>
           </div>

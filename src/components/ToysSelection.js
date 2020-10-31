@@ -20,51 +20,59 @@ const ToysSelection = () => {
           <Link to="/">
             <li className="firstSelect">
               <IconButton>Toys for </IconButton>
-              <IconButton onClick={handleAnimalsChoice} style={{
-                    opacity: `${selectedAnimal === "all" ? "1" : "0.7"}`,
-                  }}> ... all</IconButton>
+              <IconButton
+                onClick={handleAnimalsChoice}
+                style={{
+                  opacity: `${selectedAnimal === "all" ? "1" : "0.7"}`,
+                }}
+              >
+                {" "}
+                ... all
+              </IconButton>
             </li>
           </Link>
         </Tooltip>
         <Tooltip title="Toys for cats">
           <Link to="/">
             <li>
-              <IconButton onClick={handleCatsChoice} 
-              style={{
-                opacity: `${selectedAnimal === "cat" ? "1" : "0.7"}`,
-              }}
+              <IconButton
+                onClick={handleCatsChoice}
+                style={{
+                  opacity: `${selectedAnimal === "cat" ? "1" : "0.7"}`,
+                }}
               >
-                <img
-                  src={cat}
-                  alt={"cat"}
-                  style={{
-                    height: `${selectedAnimal === "cat" ? "80px" : "60px"}`,
-                    opacity: `${selectedAnimal === "cat" ? "1" : "0"}`,
-                  }}
-                />
                 ... cats
               </IconButton>
             </li>
           </Link>
         </Tooltip>
+        <img
+          src={dog}
+          alt={"dog"}
+          style={{
+            height: "70px",
+            display: `${selectedAnimal === "dog" ? "inline" : "none"}`,
+          }}
+        />
+        <img
+          src={cat}
+          alt={"cat"}
+          style={{
+            height: "80px",
+            display: `${selectedAnimal === "cat" ? "inline" : "none"}`,
+          }}
+        />
         <Tooltip title="Toys for dogs">
           <Link to="/">
             <li>
-              <IconButton onClick={handleDogsChoice}
-               style={{
-                opacity: `${selectedAnimal === "dog" ? "1" : "0.7"}`,
-              }}
+              <IconButton
+                onClick={handleDogsChoice}
+                style={{
+                  opacity: `${selectedAnimal === "dog" ? "1" : "0.7"}`,
+                }}
               >
                 {" "}
-                <img
-                  src={dog}
-                  alt={"dog"}
-                  style={{
-                    height: `${selectedAnimal === "dog" ? "80px" : "60px"}`,
-                    opacity: `${selectedAnimal === "dog" ? "1" : "0"}`,
-                  }}
-                />
-                 ... dogs
+                ... dogs
               </IconButton>
             </li>
           </Link>

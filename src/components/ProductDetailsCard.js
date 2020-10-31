@@ -8,12 +8,14 @@ import CartActionIcons from './CartActionIcons';
 
 const useStyles = makeStyles({
   root: {
+    color: "#0a4870",
     width: "32vw",
     margin: "auto",
     backgroundColor: "transparent",
-    borderRadius: "20% / 50% 50% 20% 20%",
+    borderRadius: "20% / 25% 50% 35% 20%",
     padding: "3vh",
     borderRightColor: "transparent",
+    boxShadow: "0px 2px 1px -1px #ff501e,0px 1px 1px 0px #ff501e,0px 1px 3px 0px #ff501e",
   },
   title: {
     margin: "auto",
@@ -52,9 +54,9 @@ export default function ProductDetailsCard({ matchProduct }) {
           />
         </Typography>
         <Typography className={classes.price} component="p">
-          <mark>Price </mark>
+          <>Price </>
           <span>&nbsp;&nbsp;{matchProduct.product_price}&nbsp;&nbsp;</span>{" "}
-          <span>Yards of Linen</span>
+          <>Yards of Linen</>
           <br />
         </Typography>
       </CardContent>
