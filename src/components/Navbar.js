@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Tooltip, Typography } from "@material-ui/core";
 import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
 import ToysSelection from './ToysSelection'; 
+import { useMediaPredicate } from "react-media-hook";
 
 const useStyles = makeStyles({
   icon: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles({
 const Navbar = () => {
   const { totalPrice } = useContext(AnimalsContext);
   const classes = useStyles();
+  const phone = useMediaPredicate("(max-width: 768px)");
 
   return (
     <>
@@ -30,7 +32,17 @@ const Navbar = () => {
             </Typography>
           </div>
         </div>
-        <ToysSelection />
+        {!phone && <ToysSelection />}
+        {phone && 
+         <Tooltip title="Cart">
+         <Link to="cart">
+           <IconButton>
+             {" "}
+             <ShoppingCartTwoToneIcon className={classes.icon} />{" "}
+           </IconButton>
+         </Link>
+       </Tooltip>
+       }
         <div className="nav-cart">
           <p>
             <mark>Total Price </mark>{" "}
